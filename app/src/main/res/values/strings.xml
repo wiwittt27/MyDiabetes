@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">My Diabetes</string>
+    <string name="label_image_login">Image Login</string>
+    <string name="login">Login</string>
+    <string name="label_login">Login Users</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="register">Register</string>
+    <string name="label_register">Register Users</string>
+    <string name="text_full_name">Full Name</string>
+    <string name="label_gender">Gender</string>
+
+
+    <string-array name="gender_array">
+        <item>Male</item>
+        <item>Female</item>
+    </string-array>
+</resources>
