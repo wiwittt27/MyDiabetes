@@ -8,11 +8,50 @@
     <string name="register">Register</string>
     <string name="label_register">Register Users</string>
     <string name="text_full_name">Full Name</string>
-    <string name="label_gender">Gender</string>
 
 
     <string-array name="gender_array">
         <item>Male</item>
         <item>Female</item>
     </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_history">History</string>
+    <string name="title_profile">Profile</string>
+    <string name="empty">Field tidak boleh kosong</string>
+    <string name="fab_content_desc">Mulai Diagnosis</string>
+
+    <string name="gender">Jenis Kelamin anda?</string>
+    <string name="polyuria">Apakah anda sering buang air kecil?</string>
+    <string name="polydipsia">Apakah anda sering minum / rasa haus yang berlebih?</string>
+    <string name="polyphgia">Apakah anda sering lapar / rasa lapar yang  berlebih?</string>
+    <string name="swl">Apakah berat badan anda turun drastis?</string>
+    <string name="partialP">Apakah anda merasakan melemahnya otot di area tertentu seperti, kaki,tangan, wajah?</string>
+    <string name="visualB">Apakah anda pernah merasakan penglihatan kabur?</string>
+    <string name="delayH">Apakah anda  merasakan luka yang sulit sembuh?</string>
+    <string name="weakness">Apakah anda cepat merasa lelah?</string>
+    <string name="alopecia">Apakah anda merasakan kerontokan atau kebotakan pada rambut?</string>
+    <string name="muscleS">Apakah anda  merasakan otot kaku?</string>
+    <string name="genitalT">Apakah anda merasakan sariawan pada kulit, mulut, dan organ intim?</string>
+    <string name="itching">Apakah anda sering merasakan gatal pada kulit?</string>
+    <string name="irritability">Apakah anda sering merasa gelisah atau mudah marah?</string>
+    <string name="obesity">Apakah anda merasakan Berat badan berlebih?</string>
+
+    <string name="progress_text">%1$d / %2$d </string>
+    <string name="label_gender">Gender</string>
+    <string name="label_polyuria">Polyuria</string>
+    <string name="label_polydipsia">Polydipsia</string>
+    <string name="label_polyphagia">Polyphagia</string>
+    <string name="label_swl">udden Weight Loss</string>
+    <string name="label_partialParesis">Partial Paresis</string>
+    <string name="label_visualBlurring">Visual Blurring</string>
+    <string name="label_delayedHealing">Delayed Healing</string>
+    <string name="label_weakness">Weakness</string>
+    <string name="label_alopecia">Alopecia</string>
+    <string name="label_muscleStiffness">Muscle stiffness</string>
+    <string name="label_genitalThrush">Genital Thrush</string>
+    <string name="label_itching">Itching</string>
+    <string name="label_irritability">Irritability</string>
+    <string name="label_obesity">Obesity</string>
 </resources>

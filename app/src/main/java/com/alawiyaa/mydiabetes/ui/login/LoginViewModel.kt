@@ -30,6 +30,7 @@ class LoginViewModel : ViewModel() {
                    response.isSuccessful ->{
                        _isLoading.value =false
                        _toastText.value = response.body()?.status
+                       _toMainActivity.value = true
                    }
                    else ->{
                        _isLoading.value =false

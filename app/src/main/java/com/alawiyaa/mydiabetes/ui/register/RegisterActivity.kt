@@ -17,6 +17,7 @@ class RegisterActivity : AppCompatActivity(), View.OnClickListener {
 
     private  val registerViewModel: RegisterViewModel by viewModels()
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         _binding = ActivityRegisterBinding.inflate(layoutInflater)
@@ -28,6 +29,9 @@ class RegisterActivity : AppCompatActivity(), View.OnClickListener {
 
         registerViewModel.toastText.observe(this,{
             Toast.makeText(this, it, Toast.LENGTH_SHORT).show()
+        })
+        registerViewModel.finish.observe(this,{
+            if (it) finish()
         })
 
         ArrayAdapter.createFromResource(this,R.array.gender_array, android.R.layout.simple_spinner_item).also { adapter->
@@ -45,7 +49,20 @@ class RegisterActivity : AppCompatActivity(), View.OnClickListener {
            val username = binding?.edtUsername?.text.toString().trim()
            val password = binding?.edtPassword?.text.toString().trim()
 
-           registerViewModel.registerUser(name,gender,username,password)
+           when {
+               name.isEmpty() -> {
+                   binding?.edtFullName?.error = getString(R.string.empty)
+               }
+               username.isEmpty() -> {
+                   binding?.edtUsername?.error = getString(R.string.empty)
+               }
+               password.isEmpty() -> {
+                   binding?.edtPassword?.error = getString(R.string.empty)
+               }
+               else -> {
+                   registerViewModel.registerUser(name,gender,username,password)
+               }
+           }
 
        }
     }

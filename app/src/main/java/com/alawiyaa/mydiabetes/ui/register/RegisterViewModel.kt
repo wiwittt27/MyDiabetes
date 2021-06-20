@@ -18,6 +18,9 @@ class RegisterViewModel : ViewModel() {
     private val _toastText = MutableLiveData<String>()
     val toastText: LiveData<String> = _toastText
 
+    private val _finish = MutableLiveData<Boolean>()
+    val finish : LiveData<Boolean> = _finish
+
     fun registerUser(name : String,gender : String, username : String, password:String){
         _isLoading.value = true
         val client = ApiConfig.getApiService().registerUser(name,gender,username,password)
@@ -27,6 +30,7 @@ class RegisterViewModel : ViewModel() {
                 when{
                     response.isSuccessful->{
                         _toastText.value = response.body()?.status
+                        _finish.value = true
                     }else ->{
                         _toastText.value = response.body()?.status
                     }
