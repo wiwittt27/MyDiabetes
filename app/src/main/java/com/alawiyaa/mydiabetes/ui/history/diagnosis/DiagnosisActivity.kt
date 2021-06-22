@@ -9,17 +9,21 @@ import android.util.Log
 import android.view.View
 import android.widget.TextView
 import android.widget.Toast
+import androidx.activity.viewModels
 import androidx.core.content.ContextCompat
 import com.alawiyaa.mydiabetes.R
 import com.alawiyaa.mydiabetes.data.utils.DiseaseData
 import com.alawiyaa.mydiabetes.databinding.ActivityDiagnosisBinding
 import com.alawiyaa.mydiabetes.ui.history.result.ResultActivity
+import com.alawiyaa.mydiabetes.ui.history.result.ResultViewModel
 
 class DiagnosisActivity : AppCompatActivity(), View.OnClickListener {
 
     private  var _binding : ActivityDiagnosisBinding? = null
     private val binding get() = _binding
+    private  val diagnosisViewModel: DiagnosisViewModel by viewModels()
 
+    private var resultDiagnosis : String? = null
     private var mCurrentPosition: Int = 1 // Default and the first question position
     private var mQuestionsList: ArrayList<QuestionData>? = null
     private var mSelectedOptionPosition: Int = 0
@@ -29,6 +33,7 @@ class DiagnosisActivity : AppCompatActivity(), View.OnClickListener {
         super.onCreate(savedInstanceState)
         _binding = ActivityDiagnosisBinding.inflate(layoutInflater)
         setContentView(binding?.root)
+
 
         mQuestionsList = DiseaseData.getQuestion()
         setQuestion()
@@ -88,12 +93,17 @@ class DiagnosisActivity : AppCompatActivity(), View.OnClickListener {
                                 Intent(this@DiagnosisActivity, ResultActivity::class.java)
                             intent.putStringArrayListExtra(ResultActivity.DATA_EXTRA, answerList)
                             startActivity(intent)
-                            finish()
+                                                        finish()
+
+
+
+
                         }
                     }
                 }else{
                     if (mCurrentPosition == mQuestionsList?.size) {
-                        binding?.btnNext?.text = "FINISH"
+                        binding?.btnNext?.text = "Finish"
+
                     } else {
 
                         binding?.btnNext?.text = "NEXT"
@@ -156,6 +166,26 @@ class DiagnosisActivity : AppCompatActivity(), View.OnClickListener {
                 R.drawable.default_option_border_bg
             )
         }
+    }
+
+    private fun getData(data: ArrayList<String>) {
+        val gender = data[0]
+        val polyuria  = data[1]
+        val polydipsia  = data[2]
+        val swl = data[3]
+        val weakness  = data[4]
+        val polyphagia = data[5]
+        val gt  = data[6]
+        val vb  = data[7]
+        val itching  = data[8]
+        val irritabiity  = data[9]
+        val dh  = data[10]
+        val pp  = data[11]
+        val ms  = data[12]
+        val alopecia  = data[13]
+        val obesity = data[14]
+
+        diagnosisViewModel.userClassification(gender,polyuria,polydipsia,swl,weakness,polyphagia,gt,vb,itching,irritabiity,dh,pp,ms,alopecia,obesity)
     }
 
 }

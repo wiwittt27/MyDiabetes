@@ -7,453 +7,478 @@
     android:layout_margin="20dp"
     tools:context=".ui.history.result.ResultActivity">
 
-    <TextView
-        android:id="@+id/label_gender"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="@string/label_gender"
-        android:textColor="@color/teal_700"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="16dp"
+        >
+        <TextView
+            android:id="@+id/label_gender"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/label_gender"
+            android:textColor="@color/teal_700"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/tv_gender"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:textSize="14sp"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintHorizontal_bias="0"
-        app:layout_constraintLeft_toRightOf="@id/guideline"
-        app:layout_constraintTop_toTopOf="@id/label_gender"
-        app:layout_constraintBottom_toBottomOf="@id/label_gender"
-        android:layout_marginStart="16dp"
-        tools:text="@string/label_gender" />
+        <TextView
+            android:id="@+id/tv_gender"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textSize="14sp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintLeft_toRightOf="@id/guideline"
+            app:layout_constraintTop_toTopOf="@id/label_gender"
+            app:layout_constraintBottom_toBottomOf="@id/label_gender"
+            android:layout_marginStart="16dp"
+            tools:text="@string/label_gender" />
 
-    <TextView
-        android:id="@+id/label_polyuria"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="@string/label_polyuria"
-        android:textColor="@color/teal_700"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0"
-        app:layout_constraintStart_toStartOf="parent"
-       app:layout_constraintTop_toBottomOf="@id/label_gender"/>
+        <TextView
+            android:id="@+id/label_polyuria"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/label_polyuria"
+            android:textColor="@color/teal_700"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/label_gender"/>
 
-    <TextView
-        android:id="@+id/tv_polyuria"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:textSize="14sp"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintHorizontal_bias="0"
-        app:layout_constraintLeft_toRightOf="@id/guideline"
-        app:layout_constraintTop_toTopOf="@id/label_polyuria"
-        app:layout_constraintBottom_toBottomOf="@id/label_polyuria"
-        android:layout_marginStart="16dp"
-        tools:text="@string/label_polyuria" />
+        <TextView
+            android:id="@+id/tv_polyuria"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textSize="14sp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintLeft_toRightOf="@id/guideline"
+            app:layout_constraintTop_toTopOf="@id/label_polyuria"
+            app:layout_constraintBottom_toBottomOf="@id/label_polyuria"
+            android:layout_marginStart="16dp"
+            tools:text="@string/label_polyuria" />
 
-    <TextView
-        android:id="@+id/label_polydipsia"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="@string/label_polydipsia"
-        android:textColor="@color/teal_700"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/label_polyuria"/>
+        <TextView
+            android:id="@+id/label_polydipsia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/label_polydipsia"
+            android:textColor="@color/teal_700"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/label_polyuria"/>
 
-    <TextView
-        android:id="@+id/tv_polydipsia"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:textSize="14sp"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintHorizontal_bias="0"
-        app:layout_constraintLeft_toRightOf="@id/guideline"
-        app:layout_constraintTop_toTopOf="@id/label_polydipsia"
-        app:layout_constraintBottom_toBottomOf="@id/label_polydipsia"
-        android:layout_marginStart="16dp"
-        tools:text="@string/label_polydipsia" />
+        <TextView
+            android:id="@+id/tv_polydipsia"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textSize="14sp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintLeft_toRightOf="@id/guideline"
+            app:layout_constraintTop_toTopOf="@id/label_polydipsia"
+            app:layout_constraintBottom_toBottomOf="@id/label_polydipsia"
+            android:layout_marginStart="16dp"
+            tools:text="@string/label_polydipsia" />
 
-    <TextView
-        android:id="@+id/label_polyphagia"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="@string/label_polyphagia"
-        android:textColor="@color/teal_700"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/label_polydipsia"/>
+        <TextView
+            android:id="@+id/label_swl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/label_swl"
+            android:textColor="@color/teal_700"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/label_polydipsia"/>
 
-    <TextView
-        android:id="@+id/tv_polyphagia"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:textSize="14sp"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintHorizontal_bias="0"
-        app:layout_constraintLeft_toRightOf="@id/guideline"
-        app:layout_constraintTop_toTopOf="@id/label_polyphagia"
-        app:layout_constraintBottom_toBottomOf="@id/label_polyphagia"
-        android:layout_marginStart="16dp"
-        tools:text="@string/label_polyphagia" />
+        <TextView
+            android:id="@+id/tv_swl"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textSize="14sp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintLeft_toRightOf="@id/guideline"
+            app:layout_constraintTop_toTopOf="@id/label_swl"
+            app:layout_constraintBottom_toBottomOf="@id/label_swl"
+            android:layout_marginStart="16dp"
+            tools:text="@string/label_swl" />
 
+        <TextView
+            android:id="@+id/label_weakness"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/label_weakness"
+            android:textColor="@color/teal_700"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/label_swl"/>
 
-    <TextView
-        android:id="@+id/label_swl"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="@string/label_swl"
-        android:textColor="@color/teal_700"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/label_polyphagia"/>
-
-    <TextView
-        android:id="@+id/tv_swl"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:textSize="14sp"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintHorizontal_bias="0"
-        app:layout_constraintLeft_toRightOf="@id/guideline"
-        app:layout_constraintTop_toTopOf="@id/label_swl"
-        app:layout_constraintBottom_toBottomOf="@id/label_swl"
-        android:layout_marginStart="16dp"
-        tools:text="@string/label_swl" />
-
-    <TextView
-        android:id="@+id/label_partial_paresis"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="@string/label_partialParesis"
-        android:textColor="@color/teal_700"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/label_swl"/>
-
-    <TextView
-        android:id="@+id/tv_partial_paresis"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:textSize="14sp"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintHorizontal_bias="0"
-        app:layout_constraintLeft_toRightOf="@id/guideline"
-        app:layout_constraintTop_toTopOf="@id/label_partial_paresis"
-        app:layout_constraintBottom_toBottomOf="@id/label_partial_paresis"
-        android:layout_marginStart="16dp"
-        tools:text="@string/label_partialParesis" />
-
-    <TextView
-        android:id="@+id/label_visual_blurring"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="@string/label_visualBlurring"
-        android:textColor="@color/teal_700"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/label_partial_paresis"/>
-
-    <TextView
-        android:id="@+id/tv_visual_blurring"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:textSize="14sp"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintHorizontal_bias="0"
-        app:layout_constraintLeft_toRightOf="@id/guideline"
-        app:layout_constraintTop_toTopOf="@id/label_visual_blurring"
-        app:layout_constraintBottom_toBottomOf="@id/label_visual_blurring"
-        android:layout_marginStart="16dp"
-        tools:text="@string/label_visualBlurring" />
-
-    <TextView
-        android:id="@+id/label_delayed_healing"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="@string/label_delayedHealing"
-        android:textColor="@color/teal_700"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/label_visual_blurring"/>
-
-    <TextView
-        android:id="@+id/tv_delayed_healing"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:textSize="14sp"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintHorizontal_bias="0"
-        app:layout_constraintLeft_toRightOf="@id/guideline"
-        app:layout_constraintTop_toTopOf="@id/label_delayed_healing"
-        app:layout_constraintBottom_toBottomOf="@id/label_delayed_healing"
-        android:layout_marginStart="16dp"
-        tools:text="@string/label_delayedHealing" />
+        <TextView
+            android:id="@+id/tv_weakness"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textSize="14sp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintLeft_toRightOf="@id/guideline"
+            app:layout_constraintTop_toTopOf="@id/label_weakness"
+            app:layout_constraintBottom_toBottomOf="@id/label_weakness"
+            android:layout_marginStart="16dp"
+            tools:text="@string/label_weakness" />
 
 
-    <TextView
-        android:id="@+id/label_weakness"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="@string/label_weakness"
-        android:textColor="@color/teal_700"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_delayed_healing"/>
+        <TextView
+            android:id="@+id/label_polyphagia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/label_polyphagia"
+            android:textColor="@color/teal_700"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/label_weakness"/>
 
-    <TextView
-        android:id="@+id/tv_weakness"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:textSize="14sp"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintHorizontal_bias="0"
-        app:layout_constraintLeft_toRightOf="@id/guideline"
-        app:layout_constraintTop_toTopOf="@id/label_weakness"
-        app:layout_constraintBottom_toBottomOf="@id/label_weakness"
-        android:layout_marginStart="16dp"
-        tools:text="@string/label_weakness" />
+        <TextView
+            android:id="@+id/tv_polyphagia"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textSize="14sp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintLeft_toRightOf="@id/guideline"
+            app:layout_constraintTop_toTopOf="@id/label_polyphagia"
+            app:layout_constraintBottom_toBottomOf="@id/label_polyphagia"
+            android:layout_marginStart="16dp"
+            tools:text="@string/label_polyphagia" />
+
+        <TextView
+            android:id="@+id/label_genitalThrush"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/label_genitalThrush"
+            android:textColor="@color/teal_700"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/label_polyphagia"/>
+
+        <TextView
+            android:id="@+id/tv_genitalThrush"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textSize="14sp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintLeft_toRightOf="@id/guideline"
+            app:layout_constraintTop_toTopOf="@id/label_genitalThrush"
+            app:layout_constraintBottom_toBottomOf="@id/label_genitalThrush"
+            android:layout_marginStart="16dp"
+            tools:text="@string/label_genitalThrush" />
 
 
-    <TextView
-        android:id="@+id/label_alopecia"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="@string/label_alopecia"
-        android:textColor="@color/teal_700"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/label_weakness"/>
+        <TextView
+            android:id="@+id/label_visual_blurring"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/label_visualBlurring"
+            android:textColor="@color/teal_700"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/label_genitalThrush"/>
 
-    <TextView
-        android:id="@+id/tv_alopecia"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:textSize="14sp"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintHorizontal_bias="0"
-        app:layout_constraintLeft_toRightOf="@id/guideline"
-        app:layout_constraintTop_toTopOf="@id/label_alopecia"
-        app:layout_constraintBottom_toBottomOf="@id/label_alopecia"
-        android:layout_marginStart="16dp"
-        tools:text="@string/label_alopecia" />
+        <TextView
+            android:id="@+id/tv_visual_blurring"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textSize="14sp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintLeft_toRightOf="@id/guideline"
+            app:layout_constraintTop_toTopOf="@id/label_visual_blurring"
+            app:layout_constraintBottom_toBottomOf="@id/label_visual_blurring"
+            android:layout_marginStart="16dp"
+            tools:text="@string/label_visualBlurring" />
 
-    <TextView
-        android:id="@+id/label_muscle_stiffness"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="@string/label_muscleStiffness"
-        android:textColor="@color/teal_700"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/label_alopecia"/>
+        <TextView
+            android:id="@+id/label_itching"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/label_itching"
+            android:textColor="@color/teal_700"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/label_visual_blurring"/>
 
-    <TextView
-        android:id="@+id/tv_muscle_stiffness"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:textSize="14sp"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintHorizontal_bias="0"
-        app:layout_constraintLeft_toRightOf="@id/guideline"
-        app:layout_constraintTop_toTopOf="@id/label_muscle_stiffness"
-        app:layout_constraintBottom_toBottomOf="@id/label_muscle_stiffness"
-        android:layout_marginStart="16dp"
-        tools:text="@string/label_muscleStiffness" />
+        <TextView
+            android:id="@+id/tv_itching"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textSize="14sp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintLeft_toRightOf="@id/guideline"
+            app:layout_constraintTop_toTopOf="@id/label_itching"
+            app:layout_constraintBottom_toBottomOf="@id/label_itching"
+            android:layout_marginStart="16dp"
+            tools:text="@string/label_itching" />
 
-    <TextView
-        android:id="@+id/label_genitalThrush"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="@string/label_genitalThrush"
-        android:textColor="@color/teal_700"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/label_muscle_stiffness"/>
+        <TextView
+            android:id="@+id/label_irritability"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/label_irritability"
+            android:textColor="@color/teal_700"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/label_itching"/>
 
-    <TextView
-        android:id="@+id/tv_genitalThrush"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:textSize="14sp"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintHorizontal_bias="0"
-        app:layout_constraintLeft_toRightOf="@id/guideline"
-        app:layout_constraintTop_toTopOf="@id/label_genitalThrush"
-        app:layout_constraintBottom_toBottomOf="@id/label_genitalThrush"
-        android:layout_marginStart="16dp"
-        tools:text="@string/label_genitalThrush" />
+        <TextView
+            android:id="@+id/tv_irritability"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textSize="14sp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintLeft_toRightOf="@id/guideline"
+            app:layout_constraintTop_toTopOf="@id/label_irritability"
+            app:layout_constraintBottom_toBottomOf="@id/label_irritability"
+            android:layout_marginStart="16dp"
+            tools:text="@string/label_irritability" />
 
-    <TextView
-        android:id="@+id/label_itching"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="@string/label_itching"
-        android:textColor="@color/teal_700"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/label_genitalThrush"/>
+        <TextView
+            android:id="@+id/label_delayed_healing"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/label_delayedHealing"
+            android:textColor="@color/teal_700"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/label_irritability"/>
 
-    <TextView
-        android:id="@+id/tv_itching"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:textSize="14sp"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintHorizontal_bias="0"
-        app:layout_constraintLeft_toRightOf="@id/guideline"
-        app:layout_constraintTop_toTopOf="@id/label_itching"
-        app:layout_constraintBottom_toBottomOf="@id/label_itching"
-        android:layout_marginStart="16dp"
-        tools:text="@string/label_itching" />
+        <TextView
+            android:id="@+id/tv_delayed_healing"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textSize="14sp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintLeft_toRightOf="@id/guideline"
+            app:layout_constraintTop_toTopOf="@id/label_delayed_healing"
+            app:layout_constraintBottom_toBottomOf="@id/label_delayed_healing"
+            android:layout_marginStart="16dp"
+            tools:text="@string/label_delayedHealing" />
 
-    <TextView
-        android:id="@+id/label_irritability"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="@string/label_irritability"
-        android:textColor="@color/teal_700"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/label_itching"/>
 
-    <TextView
-        android:id="@+id/tv_irritability"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:textSize="14sp"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintHorizontal_bias="0"
-        app:layout_constraintLeft_toRightOf="@id/guideline"
-        app:layout_constraintTop_toTopOf="@id/label_irritability"
-        app:layout_constraintBottom_toBottomOf="@id/label_irritability"
-        android:layout_marginStart="16dp"
-        tools:text="@string/label_irritability" />
 
-    <TextView
-        android:id="@+id/label_obesity"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="@string/label_obesity"
-        android:textColor="@color/teal_700"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/label_irritability"/>
+        <TextView
+            android:id="@+id/label_partial_paresis"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/label_partialParesis"
+            android:textColor="@color/teal_700"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/label_delayed_healing"/>
 
-    <TextView
-        android:id="@+id/tv_obesity"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:textSize="14sp"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintHorizontal_bias="0"
-        app:layout_constraintLeft_toRightOf="@id/guideline"
-        app:layout_constraintTop_toTopOf="@id/label_obesity"
-        app:layout_constraintBottom_toBottomOf="@id/label_obesity"
-        android:layout_marginStart="16dp"
-        tools:text="@string/label_obesity" />
+        <TextView
+            android:id="@+id/tv_partial_paresis"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textSize="14sp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintLeft_toRightOf="@id/guideline"
+            app:layout_constraintTop_toTopOf="@id/label_partial_paresis"
+            app:layout_constraintBottom_toBottomOf="@id/label_partial_paresis"
+            android:layout_marginStart="16dp"
+            tools:text="@string/label_partialParesis" />
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/tv_obesity"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        android:text="Selesai"
-        android:textAllCaps="false"  
-        android:background="?attr/colorPrimary"
-        android:textColor="@color/white"
-        android:layout_marginTop="16dp"
-        />
+
+        <TextView
+            android:id="@+id/label_muscle_stiffness"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/label_muscleStiffness"
+            android:textColor="@color/teal_700"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/label_partial_paresis"/>
+
+        <TextView
+            android:id="@+id/tv_muscle_stiffness"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textSize="14sp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintLeft_toRightOf="@id/guideline"
+            app:layout_constraintTop_toTopOf="@id/label_muscle_stiffness"
+            app:layout_constraintBottom_toBottomOf="@id/label_muscle_stiffness"
+            android:layout_marginStart="16dp"
+            tools:text="@string/label_muscleStiffness" />
+
+
+
+        <TextView
+            android:id="@+id/label_alopecia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/label_alopecia"
+            android:textColor="@color/teal_700"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/label_muscle_stiffness"/>
+
+        <TextView
+            android:id="@+id/tv_alopecia"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textSize="14sp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintLeft_toRightOf="@id/guideline"
+            app:layout_constraintTop_toTopOf="@id/label_alopecia"
+            app:layout_constraintBottom_toBottomOf="@id/label_alopecia"
+            android:layout_marginStart="16dp"
+            tools:text="@string/label_alopecia" />
 
 
 
 
 
+        <TextView
+            android:id="@+id/label_obesity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/label_obesity"
+            android:textColor="@color/teal_700"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/label_alopecia"/>
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_begin="159dp" />
+        <TextView
+            android:id="@+id/tv_obesity"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textSize="14sp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintLeft_toRightOf="@id/guideline"
+            app:layout_constraintTop_toTopOf="@id/label_obesity"
+            app:layout_constraintBottom_toBottomOf="@id/label_obesity"
+            android:layout_marginStart="16dp"
+            tools:text="@string/label_obesity" />
+
+        <TextView
+            android:id="@+id/tv_result"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/tv_obesity"
+            app:layout_constraintStart_toStartOf="@id/btn_submit"
+            app:layout_constraintEnd_toEndOf="@id/btn_submit"
+            tools:text="Result"
+            android:textSize="30sp"
+            android:layout_marginTop="16dp"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif-black"
+            />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_submit"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/tv_result"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:text="Selesai"
+            android:textAllCaps="false"
+            android:background="?attr/colorPrimary"
+            android:textColor="@color/white"
+            android:layout_marginTop="16dp"
+            />
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="185dp" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -40,19 +40,8 @@ object DiseaseData {
         )
         questionList.add(polydipsia)
 
-        val polyphagia = QuestionData(
-            4,
-            "Polyphagia",
-            R.drawable.ic_polyphagia,
-            "Apakah anda sering lapar / rasa lapar yang  berlebih?",
-            "Yes",
-            "No"
-
-        )
-        questionList.add(polyphagia)
-
         val swl = QuestionData(
-            5,
+            4,
             "Sudden Weight Loss",
             R.drawable.ic_weight_loss,
             "Apakah berat badan anda turun drastis?",
@@ -62,42 +51,8 @@ object DiseaseData {
         )
         questionList.add(swl)
 
-        val partialParesis = QuestionData(
-            6,
-            "Partial Paresis",
-            R.drawable.ic_partial_paresis,
-            "Apakah anda merasakan melemahnya otot di area tertentu seperti, kaki,tangan, wajah?",
-            "Yes",
-            "No"
-
-        )
-        questionList.add(partialParesis)
-
-
-        val visualBlurring = QuestionData(
-            7,
-            "Visual Blurring",
-            R.drawable.ic_visual_blurring,
-            "Apakah anda pernah merasakan penglihatan kabur?",
-            "Yes",
-            "No"
-
-        )
-        questionList.add(visualBlurring)
-
-        val delayedHealing = QuestionData(
-            8,
-            "Delayed Healing",
-            R.drawable.ic_delayed_heling,
-            "Apakah anda  merasakan luka yang sulit sembuh?",
-            "Yes",
-            "No"
-
-        )
-        questionList.add(delayedHealing)
-
         val weakness = QuestionData(
-            9,
+            5,
             "Weakness",
             R.drawable.ic_weakness,
             "Apakah anda cepat merasa lelah?",
@@ -107,31 +62,21 @@ object DiseaseData {
         )
         questionList.add(weakness)
 
-        val alopecia = QuestionData(
-            10,
-            "Alopecia",
-            R.drawable.ic_alopecia,
-            "Apakah anda merasakan kerontokan atau kebotakan pada rambut?",
+
+
+        val polyphagia = QuestionData(
+            6,
+            "Polyphagia",
+            R.drawable.ic_polyphagia,
+            "Apakah anda sering lapar / rasa lapar yang  berlebih?",
             "Yes",
             "No"
 
         )
-        questionList.add(alopecia)
-
-
-        val muscleStiffness = QuestionData(
-            11,
-            "Muscle stiffness",
-            R.drawable.ic_muscle_stiffness,
-            "Apakah anda  merasakan otot kaku?",
-            "Yes",
-            "No"
-
-        )
-        questionList.add(muscleStiffness)
+        questionList.add(polyphagia)
 
         val genitalThrush = QuestionData(
-            12,
+            7,
             "Genital Thrush",
             R.drawable.ic_genital_trush,
             "Apakah anda merasakan sariawan pada kulit, mulut, dan organ intim?",
@@ -141,8 +86,19 @@ object DiseaseData {
         )
         questionList.add(genitalThrush)
 
+        val visualBlurring = QuestionData(
+            8,
+            "Visual Blurring",
+            R.drawable.ic_visual_blurring,
+            "Apakah anda pernah merasakan penglihatan kabur?",
+            "Yes",
+            "No"
+
+        )
+        questionList.add(visualBlurring)
+
         val itching = QuestionData(
-            13,
+            9,
             "Itching",
             R.drawable.ic_itaching,
             "Apakah anda sering merasakan gatal pada kulit?",
@@ -153,7 +109,7 @@ object DiseaseData {
         questionList.add(itching)
 
         val irritability = QuestionData(
-            14,
+            10,
             "Irritability",
             R.drawable.ic_irritability,
             "Apakah anda sering merasa gelisah atau mudah marah?",
@@ -162,6 +118,61 @@ object DiseaseData {
 
         )
         questionList.add(irritability)
+
+        val delayedHealing = QuestionData(
+            11,
+            "Delayed Healing",
+            R.drawable.ic_delayed_heling,
+            "Apakah anda  merasakan luka yang sulit sembuh?",
+            "Yes",
+            "No"
+
+        )
+        questionList.add(delayedHealing)
+
+
+
+
+        val partialParesis = QuestionData(
+            12,
+            "Partial Paresis",
+            R.drawable.ic_partial_paresis,
+            "Apakah anda merasakan melemahnya otot di area tertentu seperti, kaki,tangan, wajah?",
+            "Yes",
+            "No"
+
+        )
+        questionList.add(partialParesis)
+
+
+
+
+        val muscleStiffness = QuestionData(
+            13,
+            "Muscle stiffness",
+            R.drawable.ic_muscle_stiffness,
+            "Apakah anda  merasakan otot kaku?",
+            "Yes",
+            "No"
+
+        )
+        questionList.add(muscleStiffness)
+
+
+        val alopecia = QuestionData(
+            14,
+            "Alopecia",
+            R.drawable.ic_alopecia,
+            "Apakah anda merasakan kerontokan atau kebotakan pada rambut?",
+            "Yes",
+            "No"
+
+        )
+        questionList.add(alopecia)
+
+
+
+
 
         val obesity = QuestionData(
             15,

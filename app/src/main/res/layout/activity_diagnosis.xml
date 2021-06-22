@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingTop="?attr/actionBarSize"
     android:layout_margin="16dp"
     tools:context=".ui.history.diagnosis.DiagnosisActivity">
 
@@ -106,6 +105,17 @@
         android:layout_marginTop="16dp"
         android:layout_marginBottom="16dp"
         android:background="@drawable/default_option_border_bg"
+
+        />
+
+    <TextView
+        android:id="@+id/tv_resultw"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/tv_option_two"
+        app:layout_constraintStart_toStartOf="@id/tv_option_two"
+        app:layout_constraintEnd_toEndOf="@id/tv_option_two"
+        tools:text="Answer"
 
         />
 

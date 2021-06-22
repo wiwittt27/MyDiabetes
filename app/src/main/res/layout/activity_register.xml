@@ -54,8 +54,6 @@
             android:textSize="20sp"
             android:textStyle="bold"
             android:singleLine="true"
-            android:paddingLeft="17dp"
-            android:paddingRight="17dp"
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
             />
