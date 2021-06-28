@@ -9,7 +9,7 @@
     <ImageView
         android:id="@+id/img_register"
         android:layout_width="0dp"
-        android:layout_height="250dp"
+        android:layout_height="200dp"
         android:layout_marginTop="16dp"
         android:contentDescription="@string/label_image_login"
         android:src="@drawable/ic_patient_add"
@@ -27,16 +27,17 @@
         android:textAlignment="center"
         android:textColor="#0d6e6a"
         android:textSize="35sp"
-        android:textStyle="bold"
         android:layout_marginHorizontal="26dp"
         app:layout_constraintEnd_toEndOf="@id/img_register"
         app:layout_constraintStart_toStartOf="@id/img_register"
-        app:layout_constraintTop_toBottomOf="@id/img_register" />
+        app:layout_constraintTop_toBottomOf="@id/img_register"
+        android:fontFamily="sans-serif-condensed-medium"
+        />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/txt_input_full_name"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="80dp"
         android:background="@drawable/forget"
         app:layout_constraintTop_toBottomOf="@id/label_register"
         app:layout_constraintStart_toStartOf="@id/label_register"
@@ -51,7 +52,7 @@
             android:layout_width="match_parent"
             android:background="@drawable/forget"
             android:hint="@string/text_full_name"
-            android:textSize="20sp"
+            android:textSize="15sp"
             android:textStyle="bold"
             android:singleLine="true"
             android:layout_height="wrap_content"
@@ -89,7 +90,7 @@
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/txt_input_username"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="80dp"
         android:background="@drawable/forget"
         app:layout_constraintTop_toBottomOf="@id/spin_gender"
         app:layout_constraintStart_toStartOf="@id/txt_input_full_name"
@@ -116,7 +117,7 @@
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/txt_input_password"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="80dp"
         android:background="@drawable/forget"
         app:layout_constraintTop_toBottomOf="@id/txt_input_username"
         app:layout_constraintStart_toStartOf="@id/txt_input_username"

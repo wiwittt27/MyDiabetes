@@ -1,14 +1,184 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:paddingTop="?attr/actionBarSize"
     tools:context=".ui.dashboard.DashboardFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:background="@color/gray">
 
-</FrameLayout>
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_type_diabetes"
+            android:layout_width="match_parent"
+            android:layout_height="235dp"
+            android:layout_marginVertical="10dp"
+            android:orientation="vertical"
+            app:cardCornerRadius="5dp"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/text_diabetes"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif"
+                    android:padding="5dp"
+                    android:text="Jenis-Jenis Penyakit Diabetes"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toTopOf="@id/rv_type_diabetes"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_type_diabetes"
+                    android:layout_width="match_parent"
+                    android:layout_height="225dp"
+                    app:layout_constraintTop_toBottomOf="@id/text_diabetes"
+                    tools:listitem="@layout/item_type_diabetes" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_type_drug"
+            android:layout_width="match_parent"
+            android:layout_height="455dp"
+            android:layout_marginVertical="10dp"
+            android:orientation="vertical"
+            app:cardCornerRadius="5dp"
+            app:layout_constraintTop_toBottomOf="@id/card_type_diabetes">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/text_drug"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    android:fontFamily="sans-serif"
+                    android:padding="5dp"
+                    android:text="Obat Alami dan Tanaman Herbal yang Bermanfaat untuk Pengidap Diabetes"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_type_drug"
+                    android:layout_width="match_parent"
+                    android:layout_height="365dp"
+                    android:layout_centerInParent="true"
+                    android:layout_gravity="center"
+                    android:layout_margin="10dp"
+                    app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/text_drug"
+                    tools:listitem="@layout/item_news_diabetes" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_type_factor_general"
+            android:layout_width="match_parent"
+            android:layout_height="265dp"
+            android:layout_marginVertical="10dp"
+            android:orientation="vertical"
+            app:cardCornerRadius="5dp"
+            app:layout_constraintTop_toBottomOf="@id/card_type_drug"
+
+            >
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/text_factor_diabetes"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    android:fontFamily="sans-serif"
+                    android:padding="5dp"
+                    android:text="Penyebab Diabetes Paling Umum"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_factor_diabetes"
+                    android:layout_width="match_parent"
+                    android:layout_height="215dp"
+                    android:layout_margin="10dp"
+                    app:layout_constraintTop_toBottomOf="@id/text_factor_diabetes"
+                    tools:listitem="@layout/item_type_diabetes" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_type_factor_risk"
+            android:layout_width="match_parent"
+            android:layout_height="455dp"
+            android:layout_marginVertical="10dp"
+            android:orientation="vertical"
+            android:paddingBottom="?attr/actionBarSize"
+            app:cardCornerRadius="5dp"
+            app:layout_constraintTop_toBottomOf="@id/card_type_factor_general">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:paddingBottom="?attr/actionBarSize"
+                android:layout_height="match_parent">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/text_factor_risk"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif"
+                    android:padding="5dp"
+                    android:text="Faktor risiko gaya hidup yang menyebabkan diabetes"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_factor_risk"
+                    android:layout_width="match_parent"
+                    android:layout_height="365dp"
+                    android:layout_margin="10dp"
+                    app:layout_constraintTop_toBottomOf="@id/text_factor_risk"
+                    tools:listitem="@layout/item_type_diabetes" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>

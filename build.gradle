@@ -26,6 +26,12 @@ buildscript {
         roomVersion = '2.2.3'
         roomRuntimeVersion = '2.3.0'
 
+        pagingVersion = '2.1.2'
+
+        lottie_version = "3.4.1"
+        shimmer_version = "0.5.0"
+
+
     }
     repositories {
         google()

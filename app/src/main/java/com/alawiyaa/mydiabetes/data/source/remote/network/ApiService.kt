@@ -1,12 +1,11 @@
 package com.alawiyaa.mydiabetes.data.source.remote.network
 
 import com.alawiyaa.mydiabetes.data.source.remote.response.ResponseClassification
+import com.alawiyaa.mydiabetes.data.source.remote.response.ResponseNewsItem
 import com.alawiyaa.mydiabetes.data.source.remote.response.ResponseStatus
 import com.alawiyaa.mydiabetes.data.source.remote.response.ResponseUser
 import retrofit2.Call
-import retrofit2.http.Field
-import retrofit2.http.FormUrlEncoded
-import retrofit2.http.POST
+import retrofit2.http.*
 
 interface ApiService {
 
@@ -25,7 +24,7 @@ interface ApiService {
         @Field("username") username: String,
         @Field("password") password: String,
         @Field("level") level: String = "User"
-    ): Call<ResponseUser>
+    ): Call<ResponseStatus>
 
 
 
@@ -50,4 +49,9 @@ interface ApiService {
 
     ): Call<ResponseClassification>
 
+    @GET("user_profile.php")
+    fun getUserProfile(@Query("username") username: String): Call<ResponseUser>
+
+    @GET("news_diabetes.php")
+    fun getNewsDiabetes(@Query("type") type: String): Call<ArrayList<ResponseNewsItem>>
 }

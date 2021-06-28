@@ -53,9 +53,10 @@ class DiagnosisActivity : AppCompatActivity(), View.OnClickListener {
 
         if (mCurrentPosition == mQuestionsList?.size) {
             binding?.btnNext?.text = "FINISH"
+
         } else {
             binding?.btnNext?.text = "SUBMIT"
-
+            binding?.btnNext?.setBackgroundColor(Color.GREEN)
         }
 
 
@@ -105,8 +106,9 @@ class DiagnosisActivity : AppCompatActivity(), View.OnClickListener {
                         binding?.btnNext?.text = "Finish"
 
                     } else {
-
+                        binding?.btnNext?.setBackgroundColor(Color.YELLOW)
                         binding?.btnNext?.text = "NEXT"
+
                     }
                     disable(true)
                     mSelectedOptionPosition = 0

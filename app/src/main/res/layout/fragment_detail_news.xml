@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="?attr/actionBarSize"
+    tools:context=".ui.dashboard.detail.DetailFragmentNews">
+
+    <!-- TODO: Update blank fragment layout -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/img_detail"
+            android:layout_width="0dp"
+            android:layout_height="250dp"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            android:src="@color/teal_200"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_title"
+            android:layout_width="250dp"
+            android:layout_height="70dp"
+            android:layout_marginTop="210dp"
+            android:alpha="0.9"
+            app:cardCornerRadius="10dp"
+            app:layout_constraintEnd_toEndOf="@id/img_detail"
+            app:layout_constraintStart_toStartOf="@id/img_detail"
+            app:layout_constraintTop_toTopOf="@id/img_detail">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_detail_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:shadowRadius="12"
+                android:text="@string/label_title"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_desc"
+            android:background="@color/gray"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="26dp"
+            app:cardCornerRadius="8dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/card_title">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_desc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-black"
+                android:text="@string/label_lorem"
+                android:padding="15dp"
+                android:textSize="16sp" />
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/label_source"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Source :"
+            android:textColor="@color/teal_700"
+            android:textSize="16sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/card_desc"
+            android:layout_marginLeft="16dp"
+
+            />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_source"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Source"
+            android:textColor="@color/teal_700"
+            android:textSize="16sp"
+            android:autoLink="web"
+            app:layout_constraintLeft_toRightOf="@id/label_source"
+            app:layout_constraintTop_toBottomOf="@id/label_source"
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="16dp"
+
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>

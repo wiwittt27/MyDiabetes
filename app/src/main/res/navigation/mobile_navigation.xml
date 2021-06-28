@@ -10,15 +10,41 @@
         android:id="@+id/navigation_dashboard"
         android:name="com.alawiyaa.mydiabetes.ui.dashboard.DashboardFragment"
         android:label="Dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        tools:layout="@layout/fragment_dashboard" >
+        <action
+            android:id="@+id/action_navigation_dashboard_to_detailFragmentNews"
+            app:destination="@id/detailFragmentNews" />
+    </fragment>
     <fragment
         android:id="@+id/navigation_history"
         android:name="com.alawiyaa.mydiabetes.ui.history.HistoryFragment"
-        android:label="History"
-        tools:layout="@layout/fragment_history" />
+        android:label="Likelihood Prediction"
+        tools:layout="@layout/fragment_history">
+        <action
+            android:id="@+id/action_navigation_history_to_detailFragmentBookmark"
+            app:destination="@id/detailFragmentBookmark" />
+    </fragment>
     <fragment
         android:id="@+id/navigation_profile"
         android:name="com.alawiyaa.mydiabetes.ui.profile.ProfileFragment"
         android:label="Profile"
         tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/detailFragmentNews"
+        android:name="com.alawiyaa.mydiabetes.ui.dashboard.detail.DetailFragmentNews"
+        android:label="Detail News"
+        tools:layout="@layout/fragment_detail_news">
+        <argument
+            android:name="toDetailNews"
+            app:argType="com.alawiyaa.mydiabetes.data.source.remote.response.ResponseNewsItem" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailFragmentBookmark"
+        android:name="com.alawiyaa.mydiabetes.ui.dashboard.detail.DetailFragmentBookmark"
+        android:label="Detail User"
+        tools:layout="@layout/fragment_detail_bookmark">
+        <argument
+            android:name="toBookmarkDetail"
+            app:argType="com.alawiyaa.mydiabetes.data.source.local.entitiy.UserDiseaseEntity" />
+    </fragment>
 </navigation>

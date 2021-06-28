@@ -1,16 +1,21 @@
 package com.alawiyaa.mydiabetes.ui.history.result
 
+import android.app.Application
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.alawiyaa.mydiabetes.data.source.UserRepository
+import com.alawiyaa.mydiabetes.data.source.local.entitiy.UserDiseaseEntity
 import com.alawiyaa.mydiabetes.data.source.remote.network.ApiConfig
 import com.alawiyaa.mydiabetes.data.source.remote.response.ResponseClassification
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class ResultViewModel : ViewModel(){
+class ResultViewModel(application: Application) : ViewModel(){
+
+    private val mUserRepository: UserRepository = UserRepository(application)
     private val _isLoading = MutableLiveData<Boolean>()
     val isLoading: LiveData<Boolean> = _isLoading
 
@@ -49,4 +54,16 @@ class ResultViewModel : ViewModel(){
             }
         })
     }
+
+    fun insert(user: UserDiseaseEntity) {
+        mUserRepository.insert(user)
+    }
+    fun update(user: UserDiseaseEntity) {
+        mUserRepository.update(user)
+    }
+    fun delete(user: UserDiseaseEntity) {
+        mUserRepository.delete(user)
+    }
+    
+    
 }
