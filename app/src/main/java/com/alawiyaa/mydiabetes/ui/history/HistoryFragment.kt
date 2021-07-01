@@ -10,6 +10,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.findNavController
 import androidx.paging.PagedList
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.alawiyaa.mydiabetes.data.source.local.entitiy.UserDiseaseEntity
@@ -63,7 +64,8 @@ class HistoryFragment : Fragment() {
             binding?.viewData?.root?.visibility = View.VISIBLE
         }
         binding?.fabDiagnosis?.setOnClickListener {
-            startActivity(Intent(requireContext(), DiagnosisActivity::class.java))
+         val toDiagnosis =  HistoryFragmentDirections.actionNavigationHistoryToDiagnosisFragment()
+            view.findNavController().navigate(toDiagnosis)
         }
     }
 

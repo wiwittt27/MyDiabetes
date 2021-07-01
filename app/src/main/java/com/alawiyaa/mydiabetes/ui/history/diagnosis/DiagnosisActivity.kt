@@ -23,7 +23,6 @@ class DiagnosisActivity : AppCompatActivity(), View.OnClickListener {
     private val binding get() = _binding
     private  val diagnosisViewModel: DiagnosisViewModel by viewModels()
 
-    private var resultDiagnosis : String? = null
     private var mCurrentPosition: Int = 1 // Default and the first question position
     private var mQuestionsList: ArrayList<QuestionData>? = null
     private var mSelectedOptionPosition: Int = 0
@@ -43,6 +42,7 @@ class DiagnosisActivity : AppCompatActivity(), View.OnClickListener {
         binding?.tvOptionOne?.setOnClickListener(this)
         binding?.tvOptionTwo?.setOnClickListener(this)
         binding?.btnNext?.setOnClickListener(this)
+        binding?.tglDetail?.setOnClickListener(this)
     }
 
     private fun setQuestion() {
@@ -66,6 +66,7 @@ class DiagnosisActivity : AppCompatActivity(), View.OnClickListener {
 
         binding?.tvTitle?.text = question?.title
         binding?.tvQuestion?.text = question?.question
+        binding?.tvDetail?.text = question?.detail
         question?.image?.let { binding?.imgQuestion?.setImageResource(it) }
         binding?.tvOptionOne?.text = question?.optionYes
         binding?.tvOptionTwo?.text = question?.optionNo
@@ -109,6 +110,9 @@ class DiagnosisActivity : AppCompatActivity(), View.OnClickListener {
                         binding?.btnNext?.setBackgroundColor(Color.YELLOW)
                         binding?.btnNext?.text = "NEXT"
 
+                        binding?.tvDetail?.visibility = View.GONE
+                        binding?.tglDetail?.setBackgroundResource(R.drawable.ic_hide)
+
                     }
                     disable(true)
                     mSelectedOptionPosition = 0
@@ -119,6 +123,20 @@ class DiagnosisActivity : AppCompatActivity(), View.OnClickListener {
 
                 }
             }
+            R.id.tgl_detail ->{
+                val check = binding?.tglDetail?.isChecked
+
+                if (check == true){
+                    binding?.tvDetail?.visibility = View.VISIBLE
+                    binding?.tglDetail?.setBackgroundResource(R.drawable.ic_show)
+
+                }else{
+                    binding?.tvDetail?.visibility = View.GONE
+                    binding?.tglDetail?.setBackgroundResource(R.drawable.ic_hide)
+                }
+
+            }
+
         }
     }
 
@@ -170,24 +188,6 @@ class DiagnosisActivity : AppCompatActivity(), View.OnClickListener {
         }
     }
 
-    private fun getData(data: ArrayList<String>) {
-        val gender = data[0]
-        val polyuria  = data[1]
-        val polydipsia  = data[2]
-        val swl = data[3]
-        val weakness  = data[4]
-        val polyphagia = data[5]
-        val gt  = data[6]
-        val vb  = data[7]
-        val itching  = data[8]
-        val irritabiity  = data[9]
-        val dh  = data[10]
-        val pp  = data[11]
-        val ms  = data[12]
-        val alopecia  = data[13]
-        val obesity = data[14]
 
-        diagnosisViewModel.userClassification(gender,polyuria,polydipsia,swl,weakness,polyphagia,gt,vb,itching,irritabiity,dh,pp,ms,alopecia,obesity)
-    }
 
 }

@@ -23,6 +23,9 @@
         <action
             android:id="@+id/action_navigation_history_to_detailFragmentBookmark"
             app:destination="@id/detailFragmentBookmark" />
+        <action
+            android:id="@+id/action_navigation_history_to_diagnosisFragment"
+            app:destination="@id/diagnosisFragment" />
     </fragment>
     <fragment
         android:id="@+id/navigation_profile"
@@ -46,5 +49,31 @@
         <argument
             android:name="toBookmarkDetail"
             app:argType="com.alawiyaa.mydiabetes.data.source.local.entitiy.UserDiseaseEntity" />
+    </fragment>
+    <activity
+        android:id="@+id/splashScreenActivity"
+        android:name="com.alawiyaa.mydiabetes.ui.SplashScreenActivity"
+        android:label="activity_splash_screen"
+        tools:layout="@layout/activity_splash_screen" />
+    <fragment
+        android:id="@+id/diagnosisFragment"
+        android:name="com.alawiyaa.mydiabetes.ui.history.diagnosis.DiagnosisFragment"
+        android:label="Diagnosis"
+        tools:layout="@layout/fragment_diagnosis">
+        <action
+            android:id="@+id/action_diagnosisFragment_to_resultFragment"
+            app:destination="@id/resultFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/resultFragment"
+        android:name="com.alawiyaa.mydiabetes.ui.history.result.ResultFragment"
+        android:label="Result"
+        tools:layout="@layout/fragment_result">
+        <argument
+            android:name="toResult"
+            app:argType="string[]" />
+        <action
+            android:id="@+id/action_resultFragment_to_navigation_history"
+            app:destination="@id/navigation_history" />
     </fragment>
 </navigation>

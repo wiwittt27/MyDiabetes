@@ -20,7 +20,7 @@ class DetailFragmentBookmark : Fragment() {
     private  var _binding : FragmentDetailBookmarkBinding? = null
     private val binding get() = _binding
     private var data: UserDiseaseEntity? = null
-    private var navBar: BottomNavigationView? = null
+        private var navBar: BottomNavigationView? = null
     private lateinit var  resultViewModel: ResultViewModel
 
     override fun onCreateView(

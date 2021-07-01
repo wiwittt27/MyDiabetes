@@ -5,6 +5,7 @@ data class QuestionData (
     val title :String,
     val image: Int,
     val question: String,
+    val detail: String? = null,
     val optionYes: String,
     val optionNo: String
 )

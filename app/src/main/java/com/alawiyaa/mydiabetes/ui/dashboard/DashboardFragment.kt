@@ -113,7 +113,7 @@ class DashboardFragment : Fragment() {
         }
     }
 
-    fun getTypeFactorRisk(){
+    private fun getTypeFactorRisk(){
         dashboardViewModel.getNewsFactorRisk().observe(viewLifecycleOwner, { item ->
             factorRiskAdapter?.setData(item)
             factorRiskAdapter?.notifyDataSetChanged()
