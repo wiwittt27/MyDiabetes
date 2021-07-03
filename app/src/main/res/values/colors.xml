@@ -13,4 +13,7 @@
     <color name="placeholder">#6FB6B6B6</color>
     <color name="green">#6AC86E</color>
     <color name="yellow">#FFED4E</color>
+    <color name="background">#59CEAA</color>
+
+    <color name="transparent">#00FFFFFF</color>
 </resources>

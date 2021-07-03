@@ -1,14 +1,11 @@
 <resources>
     <string name="app_name">My Diabetes</string>
-    <string name="label_image_login">Image Login</string>
     <string name="login">Login</string>
-    <string name="label_login">Login Users</string>
     <string name="username">Your username</string>
     <string name="password">Your password</string>
     <string name="lgn_username">Username</string>
     <string name="lgn_password">Password</string>
     <string name="register">Register</string>
-    <string name="label_register">Register Users</string>
     <string name="text_full_name">Your fullname</string>
 
 
@@ -17,7 +14,6 @@
         <item>Female</item>
     </string-array>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_history">Likelihood Prediction</string>
     <string name="title_profile">Profile</string>
@@ -25,20 +21,6 @@
     <string name="fab_content_desc">Mulai Diagnosis</string>
 
     <string name="gender">Jenis Kelamin anda?</string>
-    <string name="polyuria">Apakah anda sering buang air kecil?</string>
-    <string name="polydipsia">Apakah anda sering minum / rasa haus yang berlebih?</string>
-    <string name="polyphgia">Apakah anda sering lapar / rasa lapar yang  berlebih?</string>
-    <string name="swl">Apakah berat badan anda turun drastis?</string>
-    <string name="partialP">Apakah anda merasakan melemahnya otot di area tertentu seperti, kaki,tangan, wajah?</string>
-    <string name="visualB">Apakah anda pernah merasakan penglihatan kabur?</string>
-    <string name="delayH">Apakah anda  merasakan luka yang sulit sembuh?</string>
-    <string name="weakness">Apakah anda cepat merasa lelah?</string>
-    <string name="alopecia">Apakah anda merasakan kerontokan atau kebotakan pada rambut?</string>
-    <string name="muscleS">Apakah anda  merasakan otot kaku?</string>
-    <string name="genitalT">Apakah anda merasakan sariawan pada kulit, mulut, dan organ intim?</string>
-    <string name="itching">Apakah anda sering merasakan gatal pada kulit?</string>
-    <string name="irritability">Apakah anda sering merasa gelisah atau mudah marah?</string>
-    <string name="obesity">Apakah anda merasakan Berat badan berlebih?</string>
 
     <string name="progress_text">%1$d / %2$d </string>
     <string name="label_gender">Gender</string>
@@ -59,11 +41,17 @@
     <string name="label_name">Name</string>
     <string name="label_class">Class</string>
     <string name="no_data">Empty data</string>
-    <string name="delete">Hapus</string>
-    <string name="done">Selesai</string>
     <string name="label_title">Title</string>
     <string name="label_lorem">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</string>
     <string name="label_information">Hasil Deteksi Dini Diabetes adalah <big><em><cite> %1$s</cite> </em></big>, %2$s </string>
     <string name="label_positive">Kemungikan anda mengidap diabetes. </string>
     <string name="label_negative">Penyakit Diabetes </string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="signup">Sign Up</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="Berita">News</string>
+    <string name="favorite">Favorit</string>
+    <string name="news">Berita</string>
+    <string name="title_favorirte">Favorite</string>
 </resources>

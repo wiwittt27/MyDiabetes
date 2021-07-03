@@ -12,18 +12,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyDiabetes"
         android:usesCleartextTraffic="true">
-        <activity android:name=".ui.history.result.ResultActivity"></activity>
-        <activity android:name=".ui.history.diagnosis.DiagnosisActivity" />
-        <activity android:name=".ui.register.RegisterActivity" />
-        <activity android:name=".ui.login.LoginActivity" />
-        <activity android:name=".ui.SplashScreenActivity">
+        <activity android:name=".ui.signup.login.LoginActivity"></activity>
+        <activity android:name=".ui.signup.SignupActivity" />
+        <activity android:name=".ui.home.SplashScreenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.HomeActivity" />
+        <activity android:name=".ui.home.HomeActivity" />
     </application>
 
 </manifest>

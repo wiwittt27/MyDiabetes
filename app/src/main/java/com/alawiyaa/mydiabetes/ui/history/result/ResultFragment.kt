@@ -6,16 +6,18 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import com.alawiyaa.mydiabetes.R
 import com.alawiyaa.mydiabetes.data.source.local.entitiy.UserDiseaseEntity
+import com.alawiyaa.mydiabetes.data.source.remote.StatusResponse
 import com.alawiyaa.mydiabetes.data.utils.DataHelper
 import com.alawiyaa.mydiabetes.data.utils.SessionManager
 import com.alawiyaa.mydiabetes.data.utils.UserRepository
 import com.alawiyaa.mydiabetes.databinding.FragmentResultBinding
-import com.alawiyaa.mydiabetes.viewmodel.ViewModelFactory
+import com.alawiyaa.mydiabetes.viewmodel.DiabetesViewModelFactory
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class ResultFragment : Fragment(), View.OnClickListener {
@@ -44,30 +46,17 @@ class ResultFragment : Fragment(), View.OnClickListener {
         navBar = requireActivity().findViewById(R.id.nav_view)
 
         if (activity != null) {
-
+            val factory = DiabetesViewModelFactory.getInstance(requireActivity())
+            resultViewModel = ViewModelProvider(this, factory)[ResultViewModel::class.java]
             val sesi = SessionManager(requireContext())
             userRepository = UserRepository.getInstance(sesi)
             userRepository.getUser()?.let { userLogin = it }
 
             binding?.tvInformation?.visibility = View.GONE
 
-            resultViewModel = obtainViewModel()
-            resultViewModel.resultText.observe(viewLifecycleOwner, {
-
-                result = it.toString()
-                binding?.tvResult?.text = result
-                if (result.equals("Positive")){
-                    binding?.tvInformation?.visibility =View.VISIBLE
-                    binding?.tvInformation?.text = getString(R.string.label_information,binding?.tvResult?.text,getString(R.string.label_positive))
-                }else if (result.equals("Negative")){
-                    binding?.tvInformation?.visibility =View.VISIBLE
-                    binding?.tvInformation?.text = getString(R.string.label_information,binding?.tvResult?.text,getString(R.string.label_negative))
-                }
 
 
 
-
-            })
 
 
 
@@ -181,7 +170,6 @@ class ResultFragment : Fragment(), View.OnClickListener {
         }
 
 
-        // resultViewModel.userClassification(gender,polyuria,polydipsia,swl,weakness,polyphagia,gt,vb,itching,irritabiity,dh,pp,ms,alopecia,obesity)
 
 
     }
@@ -227,7 +215,7 @@ class ResultFragment : Fragment(), View.OnClickListener {
                     user.obesity = obesity
                     user.classPrediction = classPrediction
                 }
-                resultViewModel.insert(user as UserDiseaseEntity)
+                resultViewModel.insertResult(user as UserDiseaseEntity)
 
 
                 val toListDisease =
@@ -237,8 +225,7 @@ class ResultFragment : Fragment(), View.OnClickListener {
             }
             R.id.btn_process -> {
                 classificationDisease()
-                binding?.btnProcess?.visibility =View.GONE
-                binding?.btnSave?.visibility =View.VISIBLE
+
 
 
             }
@@ -279,10 +266,6 @@ class ResultFragment : Fragment(), View.OnClickListener {
     }
 
 
-    private fun obtainViewModel(): ResultViewModel {
-        val factory = ViewModelFactory.getInstance(requireActivity().application)
-        return ViewModelProvider(requireActivity(), factory).get(ResultViewModel::class.java)
-    }
 
     private fun rbIsEdit(isEdit: Boolean) {
 
@@ -515,14 +498,36 @@ class ResultFragment : Fragment(), View.OnClickListener {
             gender + polyuria + polydipsia + swl + weakness + polyphagia + gt + vb + itching + irritabiity + dh + pp + ms + alopecia + obesity
         )
 
-        resultViewModel.userClassification(
+        resultViewModel.resultClassification(
             gender,
             polyuria,
             polydipsia,
             swl,
             weakness,
             polyphagia, gt, vb, itching, irritabiity, dh, pp, ms, alopecia, obesity
-        )
+        ).observe(viewLifecycleOwner,{
+            if (it != null){
+               when(it.status){
+                   StatusResponse.SUCCESS ->{
+                       binding?.btnProcess?.visibility =View.GONE
+                       binding?.btnSave?.visibility =View.VISIBLE
+                       result = it.body?.hasil.toString()
+                       binding?.tvResult?.text = result
+                       if (result.equals("Positive")){
+                           binding?.tvInformation?.visibility =View.VISIBLE
+                           binding?.tvInformation?.text = getString(R.string.label_information,result,getString(R.string.label_positive))
+                       }else if (result.equals("Negative")){
+                           binding?.tvInformation?.visibility =View.VISIBLE
+                           binding?.tvInformation?.text = getString(R.string.label_information,result,getString(R.string.label_negative))
+                       }
+                   }
+                   StatusResponse.ERROR->{
+                       Toast.makeText(context, "Periksa koneksi internet anda!", Toast.LENGTH_SHORT).show()
+                   }
+               }
+            }
+
+        })
 
 
     }

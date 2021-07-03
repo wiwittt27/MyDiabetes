@@ -28,6 +28,9 @@ data class NewsEntity(
     @ColumnInfo(name ="source")
     var source :String,
 
+    @ColumnInfo(name ="type")
+    var type :String,
+
     @ColumnInfo(name = "is_favorite")
     var isFavorite: Boolean
 ):Parcelable

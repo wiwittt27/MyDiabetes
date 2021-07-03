@@ -19,7 +19,8 @@
         android:id="@+id/navigation_history"
         android:name="com.alawiyaa.mydiabetes.ui.history.HistoryFragment"
         android:label="Likelihood Prediction"
-        tools:layout="@layout/fragment_history">
+        tools:layout="@layout/fragment_history"
+        app:startDestination="@id/action_navigation_history_to_diagnosisFragment">
         <action
             android:id="@+id/action_navigation_history_to_detailFragmentBookmark"
             app:destination="@id/detailFragmentBookmark" />
@@ -39,7 +40,7 @@
         tools:layout="@layout/fragment_detail_news">
         <argument
             android:name="toDetailNews"
-            app:argType="com.alawiyaa.mydiabetes.data.source.remote.response.ResponseNewsItem" />
+            app:argType="com.alawiyaa.mydiabetes.data.source.local.entitiy.NewsEntity" />
     </fragment>
     <fragment
         android:id="@+id/detailFragmentBookmark"
@@ -52,7 +53,7 @@
     </fragment>
     <activity
         android:id="@+id/splashScreenActivity"
-        android:name="com.alawiyaa.mydiabetes.ui.SplashScreenActivity"
+        android:name="com.alawiyaa.mydiabetes.ui.home.SplashScreenActivity"
         android:label="activity_splash_screen"
         tools:layout="@layout/activity_splash_screen" />
     <fragment
@@ -76,4 +77,15 @@
             android:id="@+id/action_resultFragment_to_navigation_history"
             app:destination="@id/navigation_history" />
     </fragment>
+    <activity
+        android:id="@+id/homeActivity"
+        android:name="com.alawiyaa.mydiabetes.ui.home.HomeActivity"
+        android:label="activity_home"
+        tools:layout="@layout/activity_home" />
+    <activity
+        android:id="@+id/signupActivity"
+        android:name="com.alawiyaa.mydiabetes.ui.signup.SignupActivity"
+        android:label="activity_signup"
+        tools:layout="@layout/activity_signup" />
+
 </navigation>

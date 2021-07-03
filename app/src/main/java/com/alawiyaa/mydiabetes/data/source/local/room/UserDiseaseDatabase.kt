@@ -4,10 +4,11 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import com.alawiyaa.mydiabetes.data.source.local.entitiy.NewsEntity
 import com.alawiyaa.mydiabetes.data.source.local.entitiy.UserDiseaseEntity
 
 
-@Database(entities = [UserDiseaseEntity::class], version = 1,exportSchema = false)
+@Database(entities = [UserDiseaseEntity::class, NewsEntity::class], version = 1,exportSchema = false)
 abstract class UserDiseaseDatabase :RoomDatabase() {
 
     abstract fun userDao(): UserDiseaseDao

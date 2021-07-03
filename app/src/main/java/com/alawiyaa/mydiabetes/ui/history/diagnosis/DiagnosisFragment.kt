@@ -1,16 +1,13 @@
 package com.alawiyaa.mydiabetes.ui.history.diagnosis
 
 import android.graphics.Color
-import android.graphics.Typeface
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import android.widget.Toast
-import androidx.core.content.ContextCompat
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.findNavController
 import com.alawiyaa.mydiabetes.R
@@ -23,7 +20,6 @@ class DiagnosisFragment : Fragment(), View.OnClickListener {
 
     private  var _binding : FragmentDiagnosisBinding? = null
     private val binding get() = _binding
-    private  val diagnosisViewModel: DiagnosisViewModel by viewModels()
     private var navBar: BottomNavigationView? = null
     private var mCurrentPosition: Int = 1 // Default and the first question position
     private var mQuestionsList: ArrayList<QuestionData>? = null

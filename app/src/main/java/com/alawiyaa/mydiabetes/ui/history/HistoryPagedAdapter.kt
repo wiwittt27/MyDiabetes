@@ -2,7 +2,6 @@ package com.alawiyaa.mydiabetes.ui.history
 
 import android.annotation.SuppressLint
 import android.app.Activity
-import android.content.Intent
 import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -10,10 +9,8 @@ import androidx.navigation.findNavController
 import androidx.paging.PagedListAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.alawiyaa.mydiabetes.R
 import com.alawiyaa.mydiabetes.data.source.local.entitiy.UserDiseaseEntity
 import com.alawiyaa.mydiabetes.databinding.ItemUserHistoryBinding
-import com.alawiyaa.mydiabetes.ui.history.result.ResultActivity
 
 class HistoryPagedAdapter (private val activity: Activity) : PagedListAdapter<UserDiseaseEntity, HistoryPagedAdapter.UserViewHolder>(DIFF_CALLBACK){
 
@@ -57,7 +54,7 @@ class HistoryPagedAdapter (private val activity: Activity) : PagedListAdapter<Us
                 }
                 cvUser.setOnClickListener {
                     val detail = HistoryFragmentDirections.actionNavigationHistoryToDetailFragmentBookmark(user)
-                   view.findNavController().navigate(detail)
+                   cvUser.findNavController().navigate(detail)
                 }
 
 

@@ -10,9 +10,8 @@ import androidx.lifecycle.ViewModelProvider
 import com.alawiyaa.mydiabetes.R
 import com.alawiyaa.mydiabetes.data.source.local.entitiy.UserDiseaseEntity
 import com.alawiyaa.mydiabetes.databinding.FragmentDetailBookmarkBinding
-import com.alawiyaa.mydiabetes.ui.history.result.ResultActivity
 import com.alawiyaa.mydiabetes.ui.history.result.ResultViewModel
-import com.alawiyaa.mydiabetes.viewmodel.ViewModelFactory
+import com.alawiyaa.mydiabetes.viewmodel.DiabetesViewModelFactory
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 
@@ -34,7 +33,8 @@ class DetailFragmentBookmark : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         navBar = requireActivity().findViewById(R.id.nav_view)
-        resultViewModel = obtainViewModel()
+        val factory = DiabetesViewModelFactory.getInstance(requireActivity())
+        resultViewModel = ViewModelProvider(this, factory)[ResultViewModel::class.java]
        data = DetailFragmentBookmarkArgs.fromBundle(arguments as Bundle).toBookmarkDetail
 
         binding?.tvGender?.text = data?.gender
@@ -54,17 +54,13 @@ class DetailFragmentBookmark : Fragment() {
         binding?.tvObesity?.text = data?.obesity
         binding?.tvResult?.text = data?.classPrediction
 
-        binding?.btnSubmit?.setOnClickListener { data?.let {  resultViewModel.delete(it)}
+        binding?.btnSubmit?.setOnClickListener { data?.let {  resultViewModel.deleteResult(it)}
         activity?.onBackPressed()
         }
 
         
     }
 
-    private fun obtainViewModel(): ResultViewModel {
-        val factory = ViewModelFactory.getInstance(requireActivity().application)
-        return ViewModelProvider(requireActivity(), factory).get(ResultViewModel::class.java)
-    }
 
     override fun onStart() {
         super.onStart()

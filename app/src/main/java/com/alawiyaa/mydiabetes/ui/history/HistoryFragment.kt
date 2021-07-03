@@ -1,26 +1,17 @@
 package com.alawiyaa.mydiabetes.ui.history
 
-import android.content.Context
-import android.content.Intent
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.viewModels
-import androidx.lifecycle.Observer
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
-import androidx.paging.PagedList
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.alawiyaa.mydiabetes.data.source.local.entitiy.UserDiseaseEntity
 import com.alawiyaa.mydiabetes.data.utils.SessionManager
-import com.alawiyaa.mydiabetes.data.utils.SortUtils
 import com.alawiyaa.mydiabetes.data.utils.UserRepository
 import com.alawiyaa.mydiabetes.databinding.FragmentHistoryBinding
-import com.alawiyaa.mydiabetes.ui.history.diagnosis.DiagnosisActivity
-import com.alawiyaa.mydiabetes.ui.profile.ProfileViewModel
-import com.alawiyaa.mydiabetes.viewmodel.ViewModelFactory
+import com.alawiyaa.mydiabetes.viewmodel.DiabetesViewModelFactory
 
 
 class HistoryFragment : Fragment() {
@@ -45,15 +36,21 @@ class HistoryFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
       if (activity!= null){
           adapter = HistoryPagedAdapter(requireActivity())
-
+          val factory = DiabetesViewModelFactory.getInstance(requireActivity())
+          mainViewModel = ViewModelProvider(this, factory)[HistoryViewModel::class.java]
 
           val sesi = SessionManager(requireContext())
           userRepository = UserRepository.getInstance(sesi)
           userRepository.getUser()?.let { userLogin = it }
 
-          mainViewModel = obtainViewModel()
 
-          mainViewModel.getAllResultUsername(userLogin).observe(viewLifecycleOwner, userObserver)
+
+          mainViewModel.getAllResultUsername(userLogin).observe(viewLifecycleOwner, {listUser->
+              if (listUser != null && listUser.size > 0) {
+                  adapter.submitList(listUser)
+                  binding?.viewData?.root?.visibility = View.GONE
+              }
+          })
       }
         with(binding?.rvResult){
             this?.layoutManager = LinearLayoutManager(context)
@@ -85,7 +82,12 @@ class HistoryFragment : Fragment() {
     }
 
     private fun showBookmark(){
-        mainViewModel.getAllResultUsername(userLogin).observe(viewLifecycleOwner, userObserver)
+        mainViewModel.getAllResultUsername(userLogin).observe(viewLifecycleOwner, {listUser->
+            if (listUser != null && listUser.size > 0) {
+                adapter.submitList(listUser)
+                binding?.viewData?.root?.visibility = View.GONE
+            }
+        })
     }
 
 
@@ -103,15 +105,5 @@ class HistoryFragment : Fragment() {
 
     }
 
-    private fun obtainViewModel(): HistoryViewModel {
-        val factory = ViewModelFactory.getInstance(requireActivity().application)
-        return ViewModelProvider(requireActivity(),factory).get(HistoryViewModel::class.java)
-    }
-    private val userObserver = Observer<PagedList<UserDiseaseEntity>> { userList ->
-        if (userList != null && userList.size > 0) {
-            adapter.submitList(userList)
-            binding?.viewData?.root?.visibility = View.GONE
-        }
-    }
 
 }

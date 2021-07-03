@@ -4,5 +4,5 @@ import com.google.gson.annotations.SerializedName
 
 data class ResponseStatus(
 	@field:SerializedName("status")
-	val status: String
+	val status: String? = null
 )
