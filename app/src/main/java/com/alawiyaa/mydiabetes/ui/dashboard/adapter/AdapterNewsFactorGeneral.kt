@@ -6,6 +6,7 @@ import androidx.navigation.findNavController
 import androidx.paging.PagedListAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
+import com.alawiyaa.mydiabetes.BuildConfig
 import com.alawiyaa.mydiabetes.R
 import com.alawiyaa.mydiabetes.data.source.local.entitiy.NewsEntity
 import com.alawiyaa.mydiabetes.databinding.ItemTypeDiabetesBinding
@@ -46,7 +47,7 @@ class AdapterNewsFactorGeneral : PagedListAdapter<NewsEntity, AdapterNewsFactorG
            with(binding){
                tvDetailTitle.text = item.title
                Glide.with(itemView.context)
-                   .load(item.imagePath)
+                   .load(BuildConfig.BASE_URL +"diabetes/image/" + item.imagePath)
                    .apply(
                        RequestOptions.placeholderOf(R.drawable.ic_loading)
                            .error(R.drawable.ic_error))

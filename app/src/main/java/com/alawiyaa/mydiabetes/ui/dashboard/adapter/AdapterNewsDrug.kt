@@ -6,12 +6,16 @@ import androidx.navigation.findNavController
 import androidx.paging.PagedListAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
+import com.alawiyaa.mydiabetes.BuildConfig
+import com.alawiyaa.mydiabetes.BuildConfig.BASE_URL
 import com.alawiyaa.mydiabetes.R
 import com.alawiyaa.mydiabetes.data.source.local.entitiy.NewsEntity
 import com.alawiyaa.mydiabetes.databinding.ItemNewsDiabetesBinding
 import com.alawiyaa.mydiabetes.ui.dashboard.DashboardFragmentDirections
 import com.bumptech.glide.Glide
+import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.bumptech.glide.request.RequestOptions
+import com.bumptech.glide.signature.ObjectKey
 
 class AdapterNewsDrug : PagedListAdapter<NewsEntity, AdapterNewsDrug.MyAdapter>(DIFF_CALLBACK) {
 
@@ -46,7 +50,10 @@ class AdapterNewsDrug : PagedListAdapter<NewsEntity, AdapterNewsDrug.MyAdapter>(
             with(binding){
                 tvDetailTitle.text = item.title
                 Glide.with(itemView.context)
-                    .load(item.imagePath)
+                    .load(BASE_URL +"diabetes/image/" + item.imagePath)
+                    .skipMemoryCache(true)
+                    .diskCacheStrategy(DiskCacheStrategy.NONE)
+                    .signature( ObjectKey(System.currentTimeMillis()))
                     .apply(
                         RequestOptions.placeholderOf(R.drawable.ic_loading)
                             .error(R.drawable.ic_error))

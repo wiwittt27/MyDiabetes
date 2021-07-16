@@ -9,6 +9,7 @@ import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.alawiyaa.mydiabetes.R
 import com.alawiyaa.mydiabetes.databinding.FragmentDetailNewsBinding
 import com.alawiyaa.mydiabetes.databinding.FragmentNewsBinding
@@ -157,6 +158,8 @@ class NewsFragment : Fragment() {
             this?.layoutManager = GridLayoutManager(context,2)
             this?.setHasFixedSize(true)
             this?.adapter = factorRiskAdapter
+            this?.recycledViewPool?.clear()
+            this?.setRecycledViewPool(RecyclerView.RecycledViewPool())
 
         }
     }

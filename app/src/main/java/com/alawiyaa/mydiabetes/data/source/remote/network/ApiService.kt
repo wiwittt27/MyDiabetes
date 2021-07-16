@@ -10,14 +10,14 @@ import retrofit2.http.*
 interface ApiService {
 
     @FormUrlEncoded
-    @POST("login.php")
+    @POST("diabetes/api/login.php")
     fun loginUser(
         @Field("username") username: String,
         @Field("password") password: String
     ): Call<ResponseStatus>
 
     @FormUrlEncoded
-    @POST("register.php")
+    @POST("diabetes/api/register.php")
     fun registerUser(
         @Field("name") name: String,
         @Field("gender") gender: String,
@@ -29,7 +29,7 @@ interface ApiService {
 
 
     @FormUrlEncoded
-    @POST("user_clasificatioin.php")
+    @POST("diabetes/api/user_clasificatioin.php")
     fun userClassification(
         @Field("gender") gender: String,
         @Field("polyuria") polyuria: String,
@@ -49,9 +49,9 @@ interface ApiService {
 
     ): Call<ResponseClassification>
 
-    @GET("user_profile.php")
+    @GET("diabetes/api/user_profile.php")
     fun getUserProfile(@Query("username") username: String): Call<ResponseUser>
 
-    @GET("news_diabetes.php")
+    @GET("diabetes/api/news_diabetes.php")
     fun getNewsDiabetes(@Query("type") type: String): Call<ArrayList<ResponseNewsItem>>
 }

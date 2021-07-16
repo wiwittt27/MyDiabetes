@@ -11,7 +11,7 @@ object DiseaseData {
             1,
             "Gender",
             R.drawable.ic_gender,
-            "Jenis Kelamin anda?",
+            "Apa jenis Kelamin anda?",
             "Jenis Kelamin anda",
             "Pria",
             "Wanita"
@@ -59,7 +59,7 @@ object DiseaseData {
             5,
             "Weakness",
             R.drawable.ic_weakness,
-            "Apakah anda cepat merasa lelah?",
+            "Apakah anda merasakan cepat lelah?",
             "Kelemahan dapat disebabkan oleh hal-hal di luar penyakit. Contohnya termasuk kondisi fisik yang buruk, pemulihan dari latihan kekuatan, atau kelelahan ekstrem.",
             "Ya",
             "Tidak"

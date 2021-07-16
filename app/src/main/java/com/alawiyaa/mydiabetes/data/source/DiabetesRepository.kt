@@ -40,7 +40,9 @@ class DiabetesRepository private constructor(private val remoteDataSource: Remot
     override fun getListNews(type :String): LiveData<Resource<PagedList<NewsEntity>>> {
      return object : NetworkBoundResource<PagedList<NewsEntity>, List<ResponseNewsItem>>(){
          override fun shouldFetch(data: PagedList<NewsEntity>): Boolean =
-             data.isEmpty()
+
+         data.isEmpty() || data == null
+
 
          override fun saveCallResult(data: List<ResponseNewsItem>) {
              val newsList = ArrayList<NewsEntity>()

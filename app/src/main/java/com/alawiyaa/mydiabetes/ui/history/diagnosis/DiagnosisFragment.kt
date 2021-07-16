@@ -1,11 +1,15 @@
 package com.alawiyaa.mydiabetes.ui.history.diagnosis
 
+import android.app.Dialog
 import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -25,6 +29,8 @@ class DiagnosisFragment : Fragment(), View.OnClickListener {
     private var mQuestionsList: ArrayList<QuestionData>? = null
     private var mSelectedOptionPosition: Int = 0
     private var optionSelect = ""
+    private var dialog : Dialog? = null
+    private var question :QuestionData? = null
 
     private var answerList : ArrayList<String>? = null
     override fun onCreateView(
@@ -38,6 +44,7 @@ class DiagnosisFragment : Fragment(), View.OnClickListener {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         if (activity != null){
+            dialog = activity?.let { Dialog(it) }
             navBar = requireActivity().findViewById(R.id.nav_view)
             mQuestionsList = DiseaseData.getQuestion()
             setQuestion()
@@ -46,12 +53,14 @@ class DiagnosisFragment : Fragment(), View.OnClickListener {
 
 
             binding?.btnNext?.setOnClickListener(this)
-            binding?.tglDetail?.setOnClickListener(this)
+            binding?.btnInfo?.setOnClickListener(this)
+
         }
     }
 
     private fun setQuestion() {
-        val question = mQuestionsList?.get(mCurrentPosition - 1) // Getting the question from the list with the help of current position.
+
+         question = mQuestionsList?.get(mCurrentPosition - 1) // Getting the question from the list with the help of current position.
 
 
         if (mCurrentPosition == mQuestionsList?.count()) {
@@ -72,10 +81,10 @@ class DiagnosisFragment : Fragment(), View.OnClickListener {
 
         binding?.tvTitle?.text = question?.title
         binding?.tvQuestion?.text = question?.question
-        binding?.tvDetail?.text = question?.detail
         question?.image?.let { binding?.imgQuestion?.setImageResource(it) }
         binding?.rbOption1?.text = question?.optionYes
         binding?.rbOption2?.text = question?.optionNo
+
     }
 
     override fun onClick(v: View?) {
@@ -103,8 +112,7 @@ class DiagnosisFragment : Fragment(), View.OnClickListener {
                             mCurrentPosition <= mQuestionsList!!.size -> {
                                 setQuestion()
                                 answerList?.add(optionSelect)
-                                binding?.tvDetail?.visibility = View.GONE
-                                binding?.tglDetail?.setBackgroundResource(R.drawable.ic_hide)
+
                                 Log.d("DIAGNOSIS", answerList!!.toString())
                             }
                             else -> {
@@ -127,24 +135,32 @@ class DiagnosisFragment : Fragment(), View.OnClickListener {
                 }
 
             }
-            R.id.tgl_detail ->{
-                val check = binding?.tglDetail?.isChecked
-
-                if (check == true){
-                    binding?.tvDetail?.visibility = View.VISIBLE
-                    binding?.tglDetail?.setBackgroundResource(R.drawable.ic_show)
-
-                }else{
-                    binding?.tvDetail?.visibility = View.GONE
-                    binding?.tglDetail?.setBackgroundResource(R.drawable.ic_hide)
-                }
-
+            R.id.btn_info ->{
+              openDialog()
             }
 
         }
     }
 
+    private fun openDialog(){
 
+        dialog?.setContentView(R.layout.dialog_information)
+        dialog?.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+        dialog?.window?.setLayout(600,500)
+
+       val img: ImageView? = dialog?.findViewById(R.id.img_close)
+        val title = dialog?.findViewById<TextView>(R.id.tv_title_info)
+        val info = dialog?.findViewById<TextView>(R.id.tv_text_info)
+
+        title?.text = question?.title
+        info?.text = question?.detail
+        img?.setOnClickListener {
+            dialog?.dismiss()
+        }
+
+
+        dialog?.show()
+    }
 
 
     override fun onStart() {

@@ -5,6 +5,7 @@ import android.view.*
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import com.alawiyaa.mydiabetes.BuildConfig
 import com.alawiyaa.mydiabetes.R
 import com.alawiyaa.mydiabetes.data.source.local.entitiy.NewsEntity
 import com.alawiyaa.mydiabetes.databinding.FragmentDetailNewsBinding
@@ -51,7 +52,7 @@ class DetailFragmentNews : Fragment() {
         binding?.tvSource?.text = data.source
         binding?.imgDetail?.let {
             Glide.with(requireContext())
-                .load(data.imagePath)
+                .load(BuildConfig.BASE_URL +"diabetes/image/" + data.imagePath)
                 .apply(
                     RequestOptions.placeholderOf(R.drawable.ic_loading)
                         .error(R.drawable.ic_error)
