@@ -8,10 +8,12 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.alawiyaa.mydiabetes.R
 import com.alawiyaa.mydiabetes.data.utils.SessionManager
 import com.alawiyaa.mydiabetes.data.utils.UserRepository
 import com.alawiyaa.mydiabetes.databinding.FragmentHistoryBinding
 import com.alawiyaa.mydiabetes.viewmodel.DiabetesViewModelFactory
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 
 class HistoryFragment : Fragment() {
@@ -23,6 +25,8 @@ class HistoryFragment : Fragment() {
     private lateinit var mainViewModel :HistoryViewModel
     private var userLogin = ""
     lateinit var userRepository: UserRepository
+    private var navBar: BottomNavigationView? = null
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -38,6 +42,7 @@ class HistoryFragment : Fragment() {
           adapter = HistoryPagedAdapter(requireActivity())
           val factory = DiabetesViewModelFactory.getInstance(requireActivity())
           mainViewModel = ViewModelProvider(this, factory)[HistoryViewModel::class.java]
+          navBar = requireActivity().findViewById(R.id.nav_view)
 
           val sesi = SessionManager(requireContext())
           userRepository = UserRepository.getInstance(sesi)
@@ -79,6 +84,8 @@ class HistoryFragment : Fragment() {
     override fun onStart() {
         super.onStart()
         showBookmark()
+        navBar?.visibility = View.VISIBLE
+
     }
 
     private fun showBookmark(){

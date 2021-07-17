@@ -18,6 +18,7 @@ import com.alawiyaa.mydiabetes.R
 import com.alawiyaa.mydiabetes.data.utils.DiseaseData
 import com.alawiyaa.mydiabetes.databinding.FragmentDiagnosisBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import java.io.IOException
 
 
 class DiagnosisFragment : Fragment(), View.OnClickListener {
@@ -53,6 +54,7 @@ class DiagnosisFragment : Fragment(), View.OnClickListener {
 
 
             binding?.btnNext?.setOnClickListener(this)
+            binding?.btnPrevious?.setOnClickListener(this)
             binding?.btnInfo?.setOnClickListener(this)
 
         }
@@ -63,16 +65,18 @@ class DiagnosisFragment : Fragment(), View.OnClickListener {
          question = mQuestionsList?.get(mCurrentPosition - 1) // Getting the question from the list with the help of current position.
 
 
-        if (mCurrentPosition == mQuestionsList?.count()) {
-            binding?.btnNext?.text = "FINISH"
-            binding?.btnNext?.setBackgroundColor(Color.GREEN)
+            if (mCurrentPosition == mQuestionsList?.count()) {
+                binding?.btnNext?.text = "Selesai"
+                binding?.btnNext?.setBackgroundColor(Color.GREEN)
 
-        } else {
-            binding?.btnNext?.text = "NEXT"
-            binding?.rgGender?.clearCheck()
-            binding?.btnNext?.setBackgroundColor(Color.BLUE)
+            } else {
+                binding?.btnNext?.text = "Selanjutnya"
+                binding?.rgGender?.clearCheck()
+                binding?.btnNext?.setBackgroundColor(Color.BLUE)
 
-        }
+            }
+
+
 
 
 
@@ -88,10 +92,11 @@ class DiagnosisFragment : Fragment(), View.OnClickListener {
     }
 
     override fun onClick(v: View?) {
-        when(v?.id){
+        when (v?.id) {
             R.id.btn_next -> {
                 if (binding?.rbOption1?.isChecked == false && binding?.rbOption2?.isChecked == false) {
-                    Toast.makeText(requireContext(), "Anda Belum memilih!", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(requireContext(), "Anda Belum memilih!", Toast.LENGTH_SHORT)
+                        .show()
                 } else {
                     val id = binding?.rgGender?.checkedRadioButtonId
                     when (id) {
@@ -116,11 +121,11 @@ class DiagnosisFragment : Fragment(), View.OnClickListener {
                                 Log.d("DIAGNOSIS", answerList!!.toString())
                             }
                             else -> {
-                            val toResult = answerList?.toTypedArray()?.let {
-                                DiagnosisFragmentDirections.actionDiagnosisFragmentToResultFragment(
-                                    it
-                                )
-                            }
+                                val toResult = answerList?.toTypedArray()?.let {
+                                    DiagnosisFragmentDirections.actionDiagnosisFragmentToResultFragment(
+                                        it
+                                    )
+                                }
                                 if (toResult != null) {
                                     view?.findNavController()?.navigate(toResult)
                                 }
@@ -135,12 +140,36 @@ class DiagnosisFragment : Fragment(), View.OnClickListener {
                 }
 
             }
-            R.id.btn_info ->{
-              openDialog()
+            R.id.btn_info -> {
+                openDialog()
             }
+            R.id.btn_previous -> {
 
+
+                    if (mSelectedOptionPosition == 0) {
+                        mCurrentPosition--
+
+                      if (mCurrentPosition == 0){
+                          Log.d("DIAGNOSIS", "Chakzzz")
+                          activity?.onBackPressed()
+
+                      }else{
+                          setQuestion()
+                          answerList?.removeAt(mCurrentPosition - 1)
+                          Log.d("DIAGNOSIS", answerList!!.toString())
+
+                      }
+
+
+                        }
+
+
+
+            }
         }
     }
+
+
 
     private fun openDialog(){
 
@@ -163,14 +192,10 @@ class DiagnosisFragment : Fragment(), View.OnClickListener {
     }
 
 
+
     override fun onStart() {
         super.onStart()
         navBar?.visibility = View.GONE
-    }
-
-    override fun onStop() {
-        super.onStop()
-        navBar?.visibility = View.VISIBLE
     }
 
 

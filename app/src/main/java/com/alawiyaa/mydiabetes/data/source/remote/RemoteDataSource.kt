@@ -48,6 +48,7 @@ class RemoteDataSource {
 
 
     fun registerUser(name : String,gender : String, username : String, password:String) : LiveData<ApiResponse<ResponseStatus>>{
+        EspressoIdlingResource.increment()
         val resultResponse = MutableLiveData<ApiResponse<ResponseStatus>>()
         CoroutineScope(IO).launch {
             try {
@@ -64,11 +65,13 @@ class RemoteDataSource {
             }
 
         }
+        EspressoIdlingResource.decrement()
         return resultResponse
 
     }
 
     fun loginUser(username: String,password:String) : LiveData<ApiResponse<ResponseStatus>> {
+        EspressoIdlingResource.increment()
         val resultResponse = MutableLiveData<ApiResponse<ResponseStatus>>()
 
         CoroutineScope(IO).launch {
@@ -86,6 +89,7 @@ class RemoteDataSource {
             }
 
         }
+        EspressoIdlingResource.decrement()
         return resultResponse
     }
 

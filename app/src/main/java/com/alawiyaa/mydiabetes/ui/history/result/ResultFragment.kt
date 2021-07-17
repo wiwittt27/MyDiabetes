@@ -225,7 +225,7 @@ class ResultFragment : Fragment(), View.OnClickListener {
             }
             R.id.btn_process -> {
                 classificationDisease()
-
+                binding?.btnEdit?.isEnabled = false
 
 
             }
