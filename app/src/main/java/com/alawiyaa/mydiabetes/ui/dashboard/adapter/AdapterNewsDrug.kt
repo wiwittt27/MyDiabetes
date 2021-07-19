@@ -6,7 +6,6 @@ import androidx.navigation.findNavController
 import androidx.paging.PagedListAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.alawiyaa.mydiabetes.BuildConfig
 import com.alawiyaa.mydiabetes.BuildConfig.BASE_URL
 import com.alawiyaa.mydiabetes.R
 import com.alawiyaa.mydiabetes.data.source.local.entitiy.NewsEntity

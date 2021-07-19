@@ -54,7 +54,7 @@ class DetailFragmentBookmark : Fragment() {
         binding?.tvObesity?.text = data?.obesity
         binding?.tvResult?.text = data?.classPrediction
 
-        binding?.btnSubmit?.setOnClickListener { data?.let {  resultViewModel.deleteResult(it)}
+        binding?.btnDelete?.setOnClickListener { data?.let {  resultViewModel.deleteResult(it)}
         activity?.onBackPressed()
         }
 

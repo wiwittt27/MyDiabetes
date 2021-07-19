@@ -193,7 +193,7 @@ class ResultFragment : Fragment(), View.OnClickListener {
                 val ms = data[12]
                 val alopecia = data[13]
                 val obesity = data[14]
-                val classPrediction = binding?.tvResult?.text.toString()
+                val classPrediction = binding?.tvResultClassification?.text.toString()
 
                 user?.let { user ->
                     user.userName = userLogin
@@ -512,7 +512,7 @@ class ResultFragment : Fragment(), View.OnClickListener {
                        binding?.btnProcess?.visibility =View.GONE
                        binding?.btnSave?.visibility =View.VISIBLE
                        result = it.body?.hasil.toString()
-                       binding?.tvResult?.text = result
+                       binding?.tvResultClassification?.text = result
                        if (result.equals("Positive")){
                            binding?.tvInformation?.visibility =View.VISIBLE
                            binding?.tvInformation?.text = getString(R.string.label_information,result,getString(R.string.label_positive))

@@ -44,8 +44,8 @@ class ProfileFragment : Fragment() {
                     when(user.status){
                         StatusResponse.SUCCESS->{
                             binding?.tvFullName?.text = user.body?.name
-                            binding?.tvGender?.text = user.body?.gender
-                            binding?.tvUsername?.text = user.body?.username
+                            binding?.tvProfileGender?.text = user.body?.gender
+                            binding?.tvProfileUsername?.text = user.body?.username
                         }
                         StatusResponse.ERROR ->{
                             Toast.makeText(requireContext(), "Periksa koneksi internet anda!", Toast.LENGTH_SHORT).show()                        }

@@ -8,12 +8,16 @@ object SortUtils {
     const val RANDOM = "Random"
     fun getSortedQuery(filter: String): SimpleSQLiteQuery {
         val simpleQuery = StringBuilder().append("SELECT * FROM user_disease ")
-        if (filter == NEWEST) {
-            simpleQuery.append("ORDER BY id DESC")
-        } else if (filter == OLDEST) {
-            simpleQuery.append("ORDER BY id ASC")
-        } else if (filter == RANDOM) {
-            simpleQuery.append("ORDER BY RANDOM()")
+        when (filter) {
+            NEWEST -> {
+                simpleQuery.append("ORDER BY id DESC")
+            }
+            OLDEST -> {
+                simpleQuery.append("ORDER BY id ASC")
+            }
+            RANDOM -> {
+                simpleQuery.append("ORDER BY RANDOM()")
+            }
         }
         return SimpleSQLiteQuery(simpleQuery.toString())
     }

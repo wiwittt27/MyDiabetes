@@ -1,12 +1,12 @@
 package com.alawiyaa.mydiabetes.ui.signup.register
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.alawiyaa.mydiabetes.R
 import com.alawiyaa.mydiabetes.data.source.remote.StatusResponse
@@ -48,18 +48,18 @@ class RegisterFragment : Fragment(), View.OnClickListener {
         if(v?.id == R.id.btn_register_regist){
             val name = binding?.edtFullName?.text.toString().trim()
             val gender = binding?.spinGender?.selectedItem.toString()
-            val username = binding?.edtUsername?.text.toString().trim()
-            val password = binding?.edtPassword?.text.toString().trim()
+            val username = binding?.edtRegisterUsername?.text.toString().trim()
+            val password = binding?.edtRegisterPassword?.text.toString().trim()
 
             when {
                 name.isEmpty() -> {
                     binding?.edtFullName?.error = getString(R.string.empty)
                 }
                 username.isEmpty() -> {
-                    binding?.edtUsername?.error = getString(R.string.empty)
+                    binding?.edtRegisterUsername?.error = getString(R.string.empty)
                 }
                 password.isEmpty() -> {
-                    binding?.edtPassword?.error = getString(R.string.empty)
+                    binding?.edtRegisterPassword?.error = getString(R.string.empty)
                 }
                 else -> {
                     binding?.pbLoading?.visibility = View.VISIBLE

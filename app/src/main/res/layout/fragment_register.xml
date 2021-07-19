@@ -71,7 +71,7 @@
         >
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/edt_username"
+            android:id="@+id/edt_register_username"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/username"
@@ -96,7 +96,7 @@
         >
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/edt_password"
+            android:id="@+id/edt_register_password"
             android:layout_width="match_parent"
             android:hint="@string/password"
             android:textSize="20sp"

@@ -12,13 +12,11 @@ import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
 import androidx.navigation.findNavController
 import com.alawiyaa.mydiabetes.R
 import com.alawiyaa.mydiabetes.data.utils.DiseaseData
 import com.alawiyaa.mydiabetes.databinding.FragmentDiagnosisBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import java.io.IOException
 
 
 class DiagnosisFragment : Fragment(), View.OnClickListener {

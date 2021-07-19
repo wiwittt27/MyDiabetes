@@ -1,6 +1,13 @@
 <resources>
     <string name="app_name">My Diabetes</string>
     <string name="login">Login</string>
+    <string name="tab_Sign_in">Sign In</string>
+    <string name="tab_Sign_up">Sign Up</string>
+
+    <string name="tab_news">Berita</string>
+    <string name="tab_favorite">Favorit</string>
+
+
     <string name="username">Your username</string>
     <string name="password">Your password</string>
     <string name="lgn_username">Username</string>
@@ -43,15 +50,10 @@
     <string name="no_data">Data kosong</string>
     <string name="label_title">Title</string>
     <string name="label_lorem">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</string>
-    <string name="label_information">Hasil Deteksi Dini Diabetes adalah <big><b><cite> %1$s </cite> </b></big>. %2$s </string>
+    <string name="label_information">Hasil Deteksi Dini Diabetes adalah %1$s. %2$s </string>
     <string name="label_positive">Anda mungkin menderita Diabetes. Silakan berkonsultasi dengan Dokter. </string>
     <string name="label_negative">Hore! Anda tidak menderita Diabetes. Silakan berkonsultasi dengan Dokter untuk verifikasi. </string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="signup">Sign Up</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="Berita">News</string>
-    <string name="favorite">Favorit</string>
-    <string name="news">Berita</string>
-    <string name="title_favorirte">Favorite</string>
+    <string name="register_sukses">Sukses Register!</string>
 </resources>

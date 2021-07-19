@@ -678,7 +678,7 @@
 
 
         <TextView
-            android:id="@+id/tv_result"
+            android:id="@+id/tv_result_classification"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
@@ -704,7 +704,7 @@
             android:textColor="@color/white"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_result" />
+            app:layout_constraintTop_toBottomOf="@id/tv_result_classification" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_save"

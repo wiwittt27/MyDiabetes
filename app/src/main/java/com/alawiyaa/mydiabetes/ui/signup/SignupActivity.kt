@@ -1,8 +1,7 @@
 package com.alawiyaa.mydiabetes.ui.signup
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.alawiyaa.mydiabetes.R
+import androidx.appcompat.app.AppCompatActivity
 import com.alawiyaa.mydiabetes.databinding.ActivitySignupBinding
 
 class SignupActivity : AppCompatActivity() {

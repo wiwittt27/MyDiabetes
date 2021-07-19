@@ -5,21 +5,15 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
 import com.alawiyaa.mydiabetes.data.source.DiabetesRepository
 import com.alawiyaa.mydiabetes.data.source.remote.ApiResponse
-import com.alawiyaa.mydiabetes.data.source.remote.response.ResponseStatus
 import com.alawiyaa.mydiabetes.data.source.remote.response.ResponseUser
-import com.alawiyaa.mydiabetes.ui.signup.register.RegisterViewModel
-import com.nhaarman.mockitokotlin2.verify
 import junit.framework.Assert
-import org.junit.Test
-
-import org.junit.Assert.*
 import org.junit.Before
 import org.junit.Rule
+import org.junit.Test
 import org.junit.runner.RunWith
 import org.mockito.Mock
 import org.mockito.Mockito
 import org.mockito.junit.MockitoJUnitRunner
-import retrofit2.Response
 
 @RunWith(MockitoJUnitRunner::class)
 class ProfileViewModelTest {

@@ -6,15 +6,10 @@ import androidx.lifecycle.Observer
 import com.alawiyaa.mydiabetes.data.source.DiabetesRepository
 import com.alawiyaa.mydiabetes.data.source.remote.ApiResponse
 import com.alawiyaa.mydiabetes.data.source.remote.response.ResponseClassification
-import com.alawiyaa.mydiabetes.data.source.remote.response.ResponseStatus
-import com.alawiyaa.mydiabetes.data.source.remote.response.ResponseUser
-import com.alawiyaa.mydiabetes.ui.profile.ProfileViewModel
 import junit.framework.Assert
-import org.junit.Test
-
-import org.junit.Assert.*
 import org.junit.Before
 import org.junit.Rule
+import org.junit.Test
 import org.junit.runner.RunWith
 import org.mockito.Mock
 import org.mockito.Mockito
@@ -83,5 +78,9 @@ class ResultViewModelTest {
 
         resultViewModel.resultClassification(dummyGender,dummyPolyuria,dummyPolydipsia,dummySWL,dummyWeakness,dummyPolyphagia,dummyGT,dummyVB,dummyItching,dummyIrritabiity,dummyDH,dummyPP,dummyMS,dummyAlopecia,dummyObesity).observeForever(observer)
         Mockito.verify(observer).onChanged(dummyResponse)
+    }
+    @Test
+    fun resultInsert(){
+
     }
 }

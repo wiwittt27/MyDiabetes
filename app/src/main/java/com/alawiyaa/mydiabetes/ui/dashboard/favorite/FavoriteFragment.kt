@@ -1,14 +1,12 @@
 package com.alawiyaa.mydiabetes.ui.dashboard.favorite
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.alawiyaa.mydiabetes.R
-import com.alawiyaa.mydiabetes.databinding.FragmentDashboardBinding
 import com.alawiyaa.mydiabetes.databinding.FragmentFavoriteBinding
 import com.alawiyaa.mydiabetes.viewmodel.DiabetesViewModelFactory
 
@@ -38,7 +36,7 @@ class FavoriteFragment : Fragment() {
                 binding?.viewData?.root?.visibility = View.VISIBLE
             }
 
-            favoriteViewModel.getListFavoriteMovie().observe(viewLifecycleOwner, { listNews ->
+            favoriteViewModel.getListFavoriteNews().observe(viewLifecycleOwner, { listNews ->
                 if (listNews != null && listNews.size > 0) {
                     adapter.submitList(listNews)
                     binding?.viewData?.root?.visibility = View.GONE

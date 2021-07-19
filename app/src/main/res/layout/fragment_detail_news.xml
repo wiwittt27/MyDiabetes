@@ -102,13 +102,15 @@
             android:id="@+id/fab_favorite"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:srcCompat="@drawable/ic_favorite_black"
+            android:src="@drawable/ic_favorite_black"
             app:layout_constraintTop_toTopOf="@id/card_title"
             app:layout_constraintBottom_toBottomOf="@id/card_title"
             app:layout_constraintLeft_toRightOf="@id/card_title"
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_margin="16dp"
-            android:contentDescription="Button Favorite" />
+            app:backgroundTint="@color/teal_200"
+            android:contentDescription="Button Favorite"
+            app:maxImageSize="28dp"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

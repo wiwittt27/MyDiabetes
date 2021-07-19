@@ -2,8 +2,22 @@ package com.alawiyaa.mydiabetes.data.utils
 
 import com.alawiyaa.mydiabetes.data.source.local.entitiy.NewsEntity
 import com.alawiyaa.mydiabetes.data.source.remote.response.ResponseNewsItem
+import com.alawiyaa.mydiabetes.data.source.remote.response.ResponseUser
 
 object DataDummy {
+    fun userRegisterResponse() : ResponseUser{
+        val userRegister = ResponseUser()
+
+        userRegister.id
+        userRegister.name
+        userRegister.gender
+        userRegister.username
+        userRegister.password
+
+        return userRegister
+    }
+
+
     fun typeDiabetesResponse(): List<ResponseNewsItem> {
         val typeDiabetes = ArrayList<ResponseNewsItem>()
 
@@ -595,6 +609,6 @@ object DataDummy {
         )
         return  factorRisk
     }
-    
-    
+
+
 }

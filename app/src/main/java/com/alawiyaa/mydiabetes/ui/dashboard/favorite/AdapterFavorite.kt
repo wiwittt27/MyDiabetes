@@ -10,7 +10,6 @@ import com.alawiyaa.mydiabetes.BuildConfig
 import com.alawiyaa.mydiabetes.R
 import com.alawiyaa.mydiabetes.data.source.local.entitiy.NewsEntity
 import com.alawiyaa.mydiabetes.databinding.ItemFavoriteBinding
-import com.alawiyaa.mydiabetes.databinding.ItemNewsDiabetesBinding
 import com.alawiyaa.mydiabetes.ui.dashboard.DashboardFragmentDirections
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions

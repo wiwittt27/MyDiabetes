@@ -12,7 +12,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyDiabetes"
         android:usesCleartextTraffic="true">
-        <activity android:name=".ui.signup.login.LoginActivity"></activity>
         <activity android:name=".ui.signup.SignupActivity" />
         <activity android:name=".ui.home.SplashScreenActivity">
             <intent-filter>

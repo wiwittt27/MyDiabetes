@@ -94,8 +94,8 @@ class RemoteDataSource {
     }
 
     fun profileUser(username: String) : LiveData<ApiResponse<ResponseUser>> {
+        EspressoIdlingResource.increment()
         val resultResponse = MutableLiveData<ApiResponse<ResponseUser>>()
-
         CoroutineScope(IO).launch {
             try {
                 val response = ApiConfig.getApiService().getUserProfile(username).await()
@@ -111,12 +111,13 @@ class RemoteDataSource {
             }
 
         }
+        EspressoIdlingResource.decrement()
         return resultResponse
     }
 
     fun resultDiagnosis(gender: String, polyuria:String, polydipsia:String,swl:String,weakness:String,polyphagia:String, gt:String,vb:String,itching:String,irritabiity:String,dh:String,pp:String,ms:String,alopecia:String,obesity:String) : LiveData<ApiResponse<ResponseClassification>> {
+        EspressoIdlingResource.increment()
         val resultResponse = MutableLiveData<ApiResponse<ResponseClassification>>()
-
         CoroutineScope(IO).launch {
             try {
                 val response = ApiConfig.getApiService().userClassification(gender,polyuria,polydipsia,swl,weakness,polyphagia,gt,vb,itching,irritabiity,dh,pp,ms,alopecia,obesity).await()
@@ -132,6 +133,7 @@ class RemoteDataSource {
             }
 
         }
+        EspressoIdlingResource.decrement()
         return resultResponse
     }
 }

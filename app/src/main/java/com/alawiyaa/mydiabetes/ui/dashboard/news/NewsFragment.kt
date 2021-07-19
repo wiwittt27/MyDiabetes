@@ -1,17 +1,15 @@
 package com.alawiyaa.mydiabetes.ui.dashboard.news
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.alawiyaa.mydiabetes.R
-import com.alawiyaa.mydiabetes.databinding.FragmentDetailNewsBinding
 import com.alawiyaa.mydiabetes.databinding.FragmentNewsBinding
 import com.alawiyaa.mydiabetes.ui.dashboard.adapter.AdapterNewsDrug
 import com.alawiyaa.mydiabetes.ui.dashboard.adapter.AdapterNewsFactorGeneral
