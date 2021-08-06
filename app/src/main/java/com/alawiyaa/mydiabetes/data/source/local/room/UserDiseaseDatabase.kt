@@ -8,7 +8,7 @@ import com.alawiyaa.mydiabetes.data.source.local.entitiy.NewsEntity
 import com.alawiyaa.mydiabetes.data.source.local.entitiy.UserDiseaseEntity
 
 
-@Database(entities = [UserDiseaseEntity::class, NewsEntity::class], version = 1,exportSchema = false)
+@Database(entities = [UserDiseaseEntity::class, NewsEntity::class], version = 2,exportSchema = false)
 abstract class UserDiseaseDatabase :RoomDatabase() {
 
     abstract fun userDao(): UserDiseaseDao
@@ -23,7 +23,9 @@ abstract class UserDiseaseDatabase :RoomDatabase() {
                     context.applicationContext,
                     UserDiseaseDatabase::class.java,
                     "db_diabetes"
-                ).build()
+                )
+                    .fallbackToDestructiveMigration()
+                    .build()
             }
     }
 }

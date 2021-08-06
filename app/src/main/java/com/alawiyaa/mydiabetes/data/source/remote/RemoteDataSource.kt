@@ -115,12 +115,12 @@ class RemoteDataSource {
         return resultResponse
     }
 
-    fun resultDiagnosis(gender: String, polyuria:String, polydipsia:String,swl:String,weakness:String,polyphagia:String, gt:String,vb:String,itching:String,irritabiity:String,dh:String,pp:String,ms:String,alopecia:String,obesity:String) : LiveData<ApiResponse<ResponseClassification>> {
+    fun resultDiagnosis(age: String,gender: String, polyuria:String, polydipsia:String,swl:String,weakness:String,polyphagia:String, gt:String,vb:String,itching:String,irritabiity:String,dh:String,pp:String,ms:String,alopecia:String,obesity:String) : LiveData<ApiResponse<ResponseClassification>> {
         EspressoIdlingResource.increment()
         val resultResponse = MutableLiveData<ApiResponse<ResponseClassification>>()
         CoroutineScope(IO).launch {
             try {
-                val response = ApiConfig.getApiService().userClassification(gender,polyuria,polydipsia,swl,weakness,polyphagia,gt,vb,itching,irritabiity,dh,pp,ms,alopecia,obesity).await()
+                val response = ApiConfig.getApiService().userClassification(age,gender,polyuria,polydipsia,swl,weakness,polyphagia,gt,vb,itching,irritabiity,dh,pp,ms,alopecia,obesity).await()
                 resultResponse.postValue(ApiResponse.success(response))
             }catch (e :IOException){
                 e.printStackTrace()

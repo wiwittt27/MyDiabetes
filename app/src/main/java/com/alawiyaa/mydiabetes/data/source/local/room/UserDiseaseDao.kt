@@ -16,11 +16,8 @@ interface UserDiseaseDao {
     fun insert(note: UserDiseaseEntity)
 
 
-
     @Query("SELECT * FROM user_disease WHERE user_name =:username ORDER BY id ='DESC'")
     fun getListBookmarkUser(username : String) : DataSource.Factory<Int, UserDiseaseEntity>
-
-
 
     @Delete
     fun delete(user: UserDiseaseEntity)

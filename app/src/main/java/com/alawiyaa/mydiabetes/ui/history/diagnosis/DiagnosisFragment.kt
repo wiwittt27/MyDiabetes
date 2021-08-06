@@ -8,6 +8,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ArrayAdapter
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
@@ -50,6 +51,12 @@ class DiagnosisFragment : Fragment(), View.OnClickListener {
 
             answerList = ArrayList()
 
+            ArrayAdapter.createFromResource(requireContext(),R.array.age_array, android.R.layout.simple_spinner_item).also { adapter->
+                adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+                binding?.spinAge?.adapter = adapter
+
+            }
+
 
             binding?.btnNext?.setOnClickListener(this)
             binding?.btnPrevious?.setOnClickListener(this)
@@ -67,10 +74,12 @@ class DiagnosisFragment : Fragment(), View.OnClickListener {
                 binding?.btnNext?.text = "Selesai"
                 binding?.btnNext?.setBackgroundColor(Color.GREEN)
 
+
             } else {
                 binding?.btnNext?.text = "Selanjutnya"
                 binding?.rgGender?.clearCheck()
                 binding?.btnNext?.setBackgroundColor(Color.BLUE)
+
 
             }
 
@@ -87,16 +96,16 @@ class DiagnosisFragment : Fragment(), View.OnClickListener {
         binding?.rbOption1?.text = question?.optionYes
         binding?.rbOption2?.text = question?.optionNo
 
+
     }
 
     override fun onClick(v: View?) {
         when (v?.id) {
             R.id.btn_next -> {
-                if (binding?.rbOption1?.isChecked == false && binding?.rbOption2?.isChecked == false) {
-                    Toast.makeText(requireContext(), "Anda Belum memilih!", Toast.LENGTH_SHORT)
-                        .show()
-                } else {
+                binding?.rgGender?.visibility = View.VISIBLE
+                binding?.spinAge?.visibility = View.GONE
                     val id = binding?.rgGender?.checkedRadioButtonId
+                optionSelect = binding?.spinAge?.selectedItem.toString()
                     when (id) {
                         R.id.rb_option1 -> {
                             optionSelect = binding?.rbOption1?.text.toString()
@@ -105,6 +114,7 @@ class DiagnosisFragment : Fragment(), View.OnClickListener {
                         R.id.rb_option2 -> {
                             optionSelect = binding?.rbOption2?.text.toString()
 
+                        }R.id.spin_age ->{
 
                         }
 
@@ -135,7 +145,7 @@ class DiagnosisFragment : Fragment(), View.OnClickListener {
 
                     }
 
-                }
+
 
             }
             R.id.btn_info -> {
@@ -147,11 +157,16 @@ class DiagnosisFragment : Fragment(), View.OnClickListener {
                     if (mSelectedOptionPosition == 0) {
                         mCurrentPosition--
 
-                      if (mCurrentPosition == 0){
-                          Log.d("DIAGNOSIS", "Chakzzz")
-                          activity?.onBackPressed()
+                        if (mCurrentPosition == 1) {
 
-                      }else{
+                            binding?.rgGender?.visibility = View.INVISIBLE
+                            binding?.spinAge?.visibility = View.VISIBLE
+                        }else if (mCurrentPosition == 0){
+                            binding?.rgGender?.visibility = View.INVISIBLE
+                            binding?.spinAge?.visibility = View.VISIBLE
+                            Log.d("DIAGNOSIS", "Chakzzz")
+                            activity?.onBackPressed()
+                    } else{
                           setQuestion()
                           answerList?.removeAt(mCurrentPosition - 1)
                           Log.d("DIAGNOSIS", answerList!!.toString())

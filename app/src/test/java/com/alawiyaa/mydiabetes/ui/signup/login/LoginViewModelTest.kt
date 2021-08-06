@@ -47,8 +47,7 @@ class LoginViewModelTest {
     @Test
     fun userLogin() {
         val dummyResponse = ApiResponse.success(response)
-//        val result = MutableLiveData<ApiResponse<ResponseStatus>>()
-//        result.value = dummyResponse
+
         `when`(dummyResponse.body?.status).thenReturn(dummySuccess)
         val result = MutableLiveData<ApiResponse<ResponseStatus>>()
         result.value = dummyResponse
@@ -58,7 +57,7 @@ class LoginViewModelTest {
         val userLogin = loginViewModel.userLogin(dummyUsername, dummyPassword).value?.body
 
         verify(mDiabetesRepository).userLogin(dummyUsername, dummyPassword)
-        assertEquals("Login gagal", userLogin?.status)
+        assertEquals("Sukses Login!", userLogin?.status)
 
         loginViewModel.userLogin(dummyUsername, dummyPassword).observeForever(observer)
         verify(observer).onChanged(dummyResponse)

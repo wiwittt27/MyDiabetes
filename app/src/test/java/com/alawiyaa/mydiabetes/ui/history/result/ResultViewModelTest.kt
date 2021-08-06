@@ -20,8 +20,8 @@ class ResultViewModelTest {
 
 
     private lateinit var resultViewModel: ResultViewModel
-
-    private val dummyGender = "Yes"
+    private val dummyAge = "20-35"
+    private val dummyGender = "Male"
     private val dummyPolyuria= "Yes"
     private val dummyPolydipsia= "Yes"
     private val dummySWL= "Yes"
@@ -63,24 +63,20 @@ class ResultViewModelTest {
     @Test
     fun resultClassification() {
         val dummyResponse = ApiResponse.success(response)
-//        val result = MutableLiveData<ApiResponse<ResponseStatus>>()
-//        result.value = dummyResponse
+
         Mockito.`when`(dummyResponse.body?.hasil).thenReturn(dummyResult)
         val result = MutableLiveData<ApiResponse<ResponseClassification>>()
         result.value = dummyResponse
 
 
-        Mockito.`when`(mDiabetesRepository.resultDiagnosis(dummyGender,dummyPolyuria,dummyPolydipsia,dummySWL,dummyWeakness,dummyPolyphagia,dummyGT,dummyVB,dummyItching,dummyIrritabiity,dummyDH,dummyPP,dummyMS,dummyAlopecia,dummyObesity)).thenReturn(result)
-        val userClassification = resultViewModel.resultClassification(dummyGender,dummyPolyuria,dummyPolydipsia,dummySWL,dummyWeakness,dummyPolyphagia,dummyGT,dummyVB,dummyItching,dummyIrritabiity,dummyDH,dummyPP,dummyMS,dummyAlopecia,dummyObesity).value?.body
+        Mockito.`when`(mDiabetesRepository.resultDiagnosis(dummyAge,dummyGender,dummyPolyuria,dummyPolydipsia,dummySWL,dummyWeakness,dummyPolyphagia,dummyGT,dummyVB,dummyItching,dummyIrritabiity,dummyDH,dummyPP,dummyMS,dummyAlopecia,dummyObesity)).thenReturn(result)
+        val userClassification = resultViewModel.resultClassification(dummyAge,dummyGender,dummyPolyuria,dummyPolydipsia,dummySWL,dummyWeakness,dummyPolyphagia,dummyGT,dummyVB,dummyItching,dummyIrritabiity,dummyDH,dummyPP,dummyMS,dummyAlopecia,dummyObesity).value?.body
 
-        Mockito.verify(mDiabetesRepository).resultDiagnosis(dummyGender,dummyPolyuria,dummyPolydipsia,dummySWL,dummyWeakness,dummyPolyphagia,dummyGT,dummyVB,dummyItching,dummyIrritabiity,dummyDH,dummyPP,dummyMS,dummyAlopecia,dummyObesity)
+        Mockito.verify(mDiabetesRepository).resultDiagnosis(dummyAge,dummyGender,dummyPolyuria,dummyPolydipsia,dummySWL,dummyWeakness,dummyPolyphagia,dummyGT,dummyVB,dummyItching,dummyIrritabiity,dummyDH,dummyPP,dummyMS,dummyAlopecia,dummyObesity)
         Assert.assertEquals("Positive", userClassification?.hasil)
 
-        resultViewModel.resultClassification(dummyGender,dummyPolyuria,dummyPolydipsia,dummySWL,dummyWeakness,dummyPolyphagia,dummyGT,dummyVB,dummyItching,dummyIrritabiity,dummyDH,dummyPP,dummyMS,dummyAlopecia,dummyObesity).observeForever(observer)
+        resultViewModel.resultClassification(dummyAge,dummyGender,dummyPolyuria,dummyPolydipsia,dummySWL,dummyWeakness,dummyPolyphagia,dummyGT,dummyVB,dummyItching,dummyIrritabiity,dummyDH,dummyPP,dummyMS,dummyAlopecia,dummyObesity).observeForever(observer)
         Mockito.verify(observer).onChanged(dummyResponse)
     }
-    @Test
-    fun resultInsert(){
 
-    }
 }

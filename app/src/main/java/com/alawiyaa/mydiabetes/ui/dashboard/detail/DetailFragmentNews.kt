@@ -10,6 +10,8 @@ import androidx.lifecycle.ViewModelProvider
 import com.alawiyaa.mydiabetes.BuildConfig
 import com.alawiyaa.mydiabetes.R
 import com.alawiyaa.mydiabetes.data.source.local.entitiy.NewsEntity
+import com.alawiyaa.mydiabetes.data.utils.SessionManager
+import com.alawiyaa.mydiabetes.data.utils.UserRepository
 import com.alawiyaa.mydiabetes.databinding.FragmentDetailNewsBinding
 import com.alawiyaa.mydiabetes.ui.dashboard.favorite.FavoriteViewModel
 import com.alawiyaa.mydiabetes.viewmodel.DiabetesViewModelFactory
@@ -23,7 +25,8 @@ class DetailFragmentNews : Fragment() {
     private val binding get() = _binding
     private var data: NewsEntity? = null
     private var navBar: BottomNavigationView? = null
-
+    private var userLogin = ""
+    lateinit var userRepository: UserRepository
     private lateinit var favoriteViewModel: FavoriteViewModel
 
 
@@ -37,8 +40,9 @@ class DetailFragmentNews : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-
+        val sesi = SessionManager(requireContext())
+        userRepository = UserRepository.getInstance(sesi)
+        userRepository.getUser()?.let { userLogin = it }
         val factory = DiabetesViewModelFactory.getInstance(requireActivity())
         favoriteViewModel = ViewModelProvider(this, factory)[FavoriteViewModel::class.java]
         navBar = requireActivity().findViewById(R.id.nav_view)
@@ -52,6 +56,7 @@ class DetailFragmentNews : Fragment() {
         binding?.tvDetailTitle?.text = data.title
         binding?.tvDesc?.text = data.description
         binding?.tvSource?.text = data.source
+
         binding?.imgDetail?.let {
             Glide.with(requireContext())
                 .load(BuildConfig.BASE_URL +"diabetes/image/" + data.imagePath)

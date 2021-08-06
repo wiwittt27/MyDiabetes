@@ -29,6 +29,36 @@
             />
 
         <TextView
+            android:id="@+id/label_age"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/label_age"
+            android:textColor="@color/teal_700"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn_edit" />
+
+
+        <TextView
+            android:id="@+id/tv_result_age"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintBottom_toBottomOf="@id/label_age"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintLeft_toRightOf="@id/guideline"
+            app:layout_constraintRight_toRightOf="parent"
+            android:text="Age"
+            android:textSize="19sp"
+            app:layout_constraintTop_toTopOf="@id/label_age"/>
+
+
+        <TextView
             android:id="@+id/label_gender"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -40,7 +70,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0"
             app:layout_constraintStart_toStartOf="parent"
-           app:layout_constraintTop_toBottomOf="@id/btn_edit" />
+           app:layout_constraintTop_toBottomOf="@id/label_age" />
 
         <RadioGroup
             android:id="@+id/rg_gender"

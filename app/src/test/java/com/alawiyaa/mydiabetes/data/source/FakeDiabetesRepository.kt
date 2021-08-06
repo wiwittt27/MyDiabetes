@@ -25,9 +25,6 @@ class FakeDiabetesRepository (private val remoteDataSource: RemoteDataSource,
 
 
 
-
-
-
     override fun getListNews(type :String): LiveData<Resource<PagedList<NewsEntity>>> {
      return object : NetworkBoundResource<PagedList<NewsEntity>, List<ResponseNewsItem>>(){
          override fun shouldFetch(data: PagedList<NewsEntity>): Boolean =
@@ -83,6 +80,7 @@ class FakeDiabetesRepository (private val remoteDataSource: RemoteDataSource,
 
     override fun profileUser(username: String): LiveData<ApiResponse<ResponseUser>> = remoteDataSource.profileUser(username)
     override fun resultDiagnosis(
+        age: String,
         gender: String,
         polyuria: String,
         polydipsia: String,
@@ -98,7 +96,8 @@ class FakeDiabetesRepository (private val remoteDataSource: RemoteDataSource,
         ms: String,
         alopecia: String,
         obesity: String
-    ): LiveData<ApiResponse<ResponseClassification>>  = remoteDataSource.resultDiagnosis(gender,polyuria,polydipsia,swl,weakness,polyphagia,gt,vb,itching,irritabiity,dh,pp,ms,alopecia,obesity)
+    ): LiveData<ApiResponse<ResponseClassification>> = remoteDataSource.resultDiagnosis(age,gender,polyuria,polydipsia,swl,weakness,polyphagia,gt,vb,itching,irritabiity,dh,pp,ms,alopecia,obesity)
+
 
     override fun getDetailNews(newsId: Int): LiveData<NewsEntity> = localDataSource.getDetailNews(newsId)
 

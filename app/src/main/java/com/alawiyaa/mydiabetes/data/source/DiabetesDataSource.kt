@@ -20,7 +20,7 @@ interface DiabetesDataSource {
 
    fun profileUser( username : String) : LiveData<ApiResponse<ResponseUser>>
 
-   fun resultDiagnosis(gender: String, polyuria:String, polydipsia:String,swl:String,weakness:String,polyphagia:String, gt:String,vb:String,itching:String,irritabiity:String,dh:String,pp:String,ms:String,alopecia:String,obesity:String) : LiveData<ApiResponse<ResponseClassification>>
+   fun resultDiagnosis(age :String,gender: String, polyuria:String, polydipsia:String,swl:String,weakness:String,polyphagia:String, gt:String,vb:String,itching:String,irritabiity:String,dh:String,pp:String,ms:String,alopecia:String,obesity:String) : LiveData<ApiResponse<ResponseClassification>>
 
     fun getDetailNews(newsId : Int) : LiveData<NewsEntity>
 

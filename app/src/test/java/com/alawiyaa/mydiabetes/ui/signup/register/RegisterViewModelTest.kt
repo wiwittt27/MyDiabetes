@@ -16,7 +16,6 @@ import org.mockito.Mockito
 import org.mockito.junit.MockitoJUnitRunner
 
 @RunWith(MockitoJUnitRunner::class)
-
 class RegisterViewModelTest {
 
     private lateinit var registerViewModel: RegisterViewModel
@@ -51,8 +50,6 @@ class RegisterViewModelTest {
     @Test
     fun registerUser() {
         val dummyResponse = ApiResponse.success(response)
-//        val result = MutableLiveData<ApiResponse<ResponseStatus>>()
-//        result.value = dummyResponse
         Mockito.`when`(dummyResponse.body?.status).thenReturn(dummySuccess)
         val result = MutableLiveData<ApiResponse<ResponseStatus>>()
         result.value = dummyResponse

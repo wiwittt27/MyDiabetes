@@ -7,5 +7,5 @@ data class QuestionData (
     val question: String,
     val detail: String? = null,
     val optionYes: String,
-    val optionNo: String
+    val optionNo: String? = null
 )

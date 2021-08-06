@@ -43,11 +43,11 @@
                    android:layout_marginTop="16dp"
                    android:layout_weight="3"
                    android:indeterminate="false"
-                   android:max="15"
+                   android:max="16"
                    android:paddingLeft="5dp"
                    android:background="@color/white"
                    android:minHeight="50dp"
-                   android:progress="0"
+                   android:progress="1"
                    android:layout_marginStart="6dp"
                    app:layout_constraintLeft_toLeftOf="parent"
                    app:layout_constraintRight_toLeftOf="@id/tv_progress"
@@ -180,6 +180,7 @@
                  app:layout_constraintLeft_toLeftOf="parent"
                   app:layout_constraintRight_toRightOf="parent"
                   android:layout_height="wrap_content"
+                  android:visibility="invisible"
                   app:layout_constraintBottom_toTopOf="@id/btn_next"
                   app:layout_constraintTop_toTopOf="parent"
                   android:orientation="vertical">
@@ -205,6 +206,22 @@
                       android:layout_marginVertical="4dp"
                       android:layout_height="wrap_content"/>
               </RadioGroup>
+
+
+              <Spinner
+                  android:id="@+id/spin_age"
+                  android:layout_width="0dp"
+                  app:layout_constraintLeft_toLeftOf="parent"
+                  app:layout_constraintRight_toRightOf="parent"
+                  android:layout_height="wrap_content"
+                  app:layout_constraintStart_toStartOf="@id/btn_previous"
+                  app:layout_constraintEnd_toEndOf="@id/btn_next"
+                  app:layout_constraintBottom_toTopOf="@id/btn_next"
+                  app:layout_constraintTop_toTopOf="parent"
+                  android:padding="20dp"
+                  android:textAlignment="center"
+
+                  />
 
               <androidx.appcompat.widget.AppCompatButton
                   android:id="@+id/btn_next"

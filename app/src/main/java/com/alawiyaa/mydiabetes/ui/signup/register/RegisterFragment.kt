@@ -39,8 +39,9 @@ class RegisterFragment : Fragment(), View.OnClickListener {
                 adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
                 binding?.spinGender?.adapter = adapter
 
-                binding?.btnRegisterRegist?.setOnClickListener(this)
+
             }
+            binding?.btnRegisterRegist?.setOnClickListener(this)
         }
     }
 

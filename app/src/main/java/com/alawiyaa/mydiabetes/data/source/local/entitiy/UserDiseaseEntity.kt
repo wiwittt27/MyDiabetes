@@ -19,8 +19,12 @@ data class UserDiseaseEntity(
     @ColumnInfo(name = "date")
     var date: String? = null,
 
+    @ColumnInfo(name = "age")
+    var age: String? = null,
+
     @ColumnInfo(name = "gender")
     var gender: String? = null,
+
 
     @ColumnInfo(name = "polyuria")
     var polyuria: String? = null,

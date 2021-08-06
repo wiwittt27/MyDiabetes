@@ -7,8 +7,22 @@ object DiseaseData {
     fun getQuestion(): ArrayList<QuestionData> {
         val questionList = ArrayList<QuestionData>()
 
-        val gender = QuestionData(
+
+
+        val age = QuestionData(
             1,
+            "Age",
+            R.drawable.ic_gender,
+            "Rentang umur anda?",
+            "Berapa rentang umur anda",
+            "20-35",
+            null
+        )
+        questionList.add(age)
+
+
+        val gender = QuestionData(
+            2,
             "Gender",
             R.drawable.ic_gender,
             "Apa jenis Kelamin anda?",
@@ -20,7 +34,7 @@ object DiseaseData {
 
 
         val polyuria = QuestionData(
-            2,
+            3,
             "Polyuria",
             R.drawable.ic_polyuria,
             "Apakah anda sering buang air kecil?",
@@ -32,7 +46,7 @@ object DiseaseData {
         questionList.add(polyuria)
 
         val polydipsia = QuestionData(
-            3,
+            4,
             "Polydipsia",
             R.drawable.ic_polydipsia,
             "Apakah anda sering minum / rasa haus yang berlebih?",
@@ -44,7 +58,7 @@ object DiseaseData {
         questionList.add(polydipsia)
 
         val swl = QuestionData(
-            4,
+            5,
             "Sudden Weight Loss",
             R.drawable.ic_weight_loss,
             "Apakah berat badan anda turun drastis?",
@@ -56,7 +70,7 @@ object DiseaseData {
         questionList.add(swl)
 
         val weakness = QuestionData(
-            5,
+            6,
             "Weakness",
             R.drawable.ic_weakness,
             "Apakah anda merasakan cepat lelah?",
@@ -70,7 +84,7 @@ object DiseaseData {
 
 
         val polyphagia = QuestionData(
-            6,
+            7,
             "Polyphagia",
             R.drawable.ic_polyphagia,
             "Apakah anda sering lapar / rasa lapar yang  berlebih?",
@@ -82,7 +96,7 @@ object DiseaseData {
         questionList.add(polyphagia)
 
         val genitalThrush = QuestionData(
-            7,
+            8,
             "Genital Thrush",
             R.drawable.ic_genital_trush,
             "Apakah anda merasakan sariawan pada kulit, mulut, dan organ intim?",
@@ -94,7 +108,7 @@ object DiseaseData {
         questionList.add(genitalThrush)
 
         val visualBlurring = QuestionData(
-            8,
+            9,
             "Visual Blurring",
             R.drawable.ic_visual_blurring,
             "Apakah anda pernah merasakan penglihatan kabur?",
@@ -106,7 +120,7 @@ object DiseaseData {
         questionList.add(visualBlurring)
 
         val itching = QuestionData(
-            9,
+            10,
             "Itching",
             R.drawable.ic_itaching,
             "Apakah anda sering merasakan gatal pada kulit?",
@@ -118,7 +132,7 @@ object DiseaseData {
         questionList.add(itching)
 
         val irritability = QuestionData(
-            10,
+            11,
             "Irritability",
             R.drawable.ic_irritability,
             "Apakah anda sering merasa gelisah atau mudah marah?",
@@ -130,7 +144,7 @@ object DiseaseData {
         questionList.add(irritability)
 
         val delayedHealing = QuestionData(
-            11,
+            12,
             "Delayed Healing",
             R.drawable.ic_delayed_heling,
             "Apakah anda  merasakan luka yang sulit sembuh?",
@@ -145,7 +159,7 @@ object DiseaseData {
 
 
         val partialParesis = QuestionData(
-            12,
+            13,
             "Partial Paresis",
             R.drawable.ic_partial_paresis,
             "Apakah anda merasakan melemahnya otot di area tertentu seperti, kaki,tangan, wajah?",
@@ -160,7 +174,7 @@ object DiseaseData {
 
 
         val muscleStiffness = QuestionData(
-            13,
+            14,
             "Muscle stiffness",
             R.drawable.ic_muscle_stiffness,
             "Apakah anda  merasakan otot kaku?",
@@ -173,7 +187,7 @@ object DiseaseData {
 
 
         val alopecia = QuestionData(
-            14,
+            15,
             "Alopecia",
             R.drawable.ic_alopecia,
             "Apakah anda merasakan kerontokan atau kebotakan pada rambut?",
@@ -189,7 +203,7 @@ object DiseaseData {
 
 
         val obesity = QuestionData(
-            15,
+            16,
             "Obesity",
             R.drawable.ic_obesity,
             "Apakah anda merasakan Berat badan berlebih?",
@@ -200,7 +214,7 @@ object DiseaseData {
         )
         questionList.add(obesity)
         val obesityy = QuestionData(
-            16,
+            17,
             "Obesity",
             R.drawable.ic_obesity,
             "Apakah anda merasakan Berat badan berlebih?",

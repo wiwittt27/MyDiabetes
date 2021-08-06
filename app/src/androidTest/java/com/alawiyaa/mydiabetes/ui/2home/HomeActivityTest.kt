@@ -19,6 +19,7 @@ import com.alawiyaa.mydiabetes.data.utils.DataDummy
 import com.alawiyaa.mydiabetes.data.utils.EspressoIdlingResource
 import com.alawiyaa.mydiabetes.ui.home.HomeActivity
 import org.hamcrest.Matcher
+import org.hamcrest.Matchers
 import org.junit.After
 import org.junit.Before
 import org.junit.FixMethodOrder
@@ -38,6 +39,7 @@ class HomeActivityTest {
     private val dummyResultPositive =
         "Hasil Deteksi Dini Diabetes adalah Positive. Anda mungkin menderita Diabetes. Silakan berkonsultasi dengan Dokter."
 
+    private val dummyAge = "20-35"
     @Before
     fun setUp() {
         ActivityScenario.launch(HomeActivity::class.java)
@@ -197,6 +199,17 @@ class HomeActivityTest {
     fun test5UserPrediction(){
         Espresso.onView(withId(R.id.navigation_history)).perform(click())
         Espresso.onView(withId(R.id.fab_diagnosis)).perform(click())
+
+            Espresso.onView(withId(R.id.spin_age)).perform(click())
+            Espresso.onData(
+                Matchers.allOf(
+                    Matchers.`is`(Matchers.instanceOf(String::class.java)),
+                    Matchers.`is`(dummyAge)
+                )
+            ).perform(click())
+            Espresso.onView(withId(R.id.spin_age))
+                .check(matches(withSpinnerText(Matchers.containsString(dummyAge))))
+            Espresso.onView(withId(R.id.btn_next)).perform(click())
 
         for (i in 0..14){
             Espresso.onView(withId(R.id.rb_option1))

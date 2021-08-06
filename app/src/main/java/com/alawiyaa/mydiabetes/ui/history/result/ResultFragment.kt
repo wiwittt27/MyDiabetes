@@ -76,93 +76,97 @@ class ResultFragment : Fragment(), View.OnClickListener {
 
     private fun getData(data: Array<String>) {
         rbIsEdit(false)
-        val gender = data[0]
+
+        val age = data[0]
+        binding?.tvResultAge?.text = age
+
+        val gender = data[1]
         if (gender == "Pria") {
             binding?.rbPeria?.isChecked = true
         } else {
             binding?.rbWanita?.isChecked = true
 
         }
-        val polyuria = data[1]
+        val polyuria = data[2]
         if (polyuria == "Ya") {
             binding?.polyuriaYes?.isChecked = true
         } else {
             binding?.polyuriaNo?.isChecked = true
 
         }
-        val polydipsia = data[2]
+        val polydipsia = data[3]
         if (polydipsia == "Ya") {
             binding?.polydipsiaYes?.isChecked = true
         } else {
             binding?.polydipsiaNo?.isChecked = true
         }
-        val swl = data[3]
+        val swl = data[4]
         if (swl == "Ya") {
             binding?.swlYes?.isChecked = true
         } else {
             binding?.swlNo?.isChecked = true
         }
-        val weakness = data[4]
+        val weakness = data[5]
         if (weakness == "Ya") {
             binding?.weaknessYes?.isChecked = true
         } else {
             binding?.weaknessNo?.isChecked = true
         }
-        val polyphagia = data[5]
+        val polyphagia = data[6]
         if (polyphagia == "Ya") {
             binding?.polyphagiaYes?.isChecked = true
         } else {
             binding?.polyphagiaNo?.isChecked = true
         }
-        val gt = data[6]
+        val gt = data[7]
         if (gt == "Ya") {
             binding?.genitalThrushYes?.isChecked = true
         } else {
             binding?.genitalThrushNo?.isChecked = true
         }
-        val vb = data[7]
+        val vb = data[8]
         if (vb == "Ya") {
             binding?.visualBlurringYes?.isChecked = true
         } else {
             binding?.visualBlurringNo?.isChecked = true
         }
-        val itching = data[8]
+        val itching = data[9]
         if (itching == "Ya") {
             binding?.itchingYes?.isChecked = true
         } else {
             binding?.itchingNo?.isChecked = true
         }
-        val irritabiity = data[9]
+        val irritabiity = data[10]
         if (irritabiity == "Ya") {
             binding?.irritabilityYes?.isChecked = true
         } else {
             binding?.irritabilityNo?.isChecked = true
         }
-        val dh = data[10]
+        val dh = data[11]
         if (dh == "Ya") {
             binding?.delayedHealingYes?.isChecked = true
         } else {
             binding?.delayedHealingNo?.isChecked = true
         }
-        val pp = data[11]
+        val pp = data[12]
         if (pp == "Ya") {
             binding?.partialParesisYes?.isChecked = true
         } else {
             binding?.partialParesisNo?.isChecked = true
         }
-        val ms = data[12]
+        val ms = data[13]
         if (ms == "Ya") {
             binding?.muscleStiffnessYes?.isChecked = true
         } else {
             binding?.muscleStiffnessNo?.isChecked = true
         }
-        val alopecia = data[13]
+        val alopecia = data[14]
         if (alopecia == "Ya") {
             binding?.alopeciaYes?.isChecked = true
         } else {
             binding?.alopeciaNo?.isChecked = true
         }
-        val obesity = data[14]
+        val obesity = data[15]
         if (obesity == "Ya") {
             binding?.obesityYes?.isChecked = true
         } else {
@@ -178,26 +182,28 @@ class ResultFragment : Fragment(), View.OnClickListener {
         when (v.id) {
             R.id.btn_save -> {
                 val date = DataHelper.getCurrentDate()
-                val gender = data[0]
-                val polyuria = data[1]
-                val polydipsia = data[2]
-                val swl = data[3]
-                val weakness = data[4]
-                val polyphagia = data[5]
-                val gt = data[6]
-                val vb = data[7]
-                val itching = data[8]
-                val irritabiity = data[9]
-                val dh = data[10]
-                val pp = data[11]
-                val ms = data[12]
-                val alopecia = data[13]
-                val obesity = data[14]
+                val age = data[0]
+                val gender = data[1]
+                val polyuria = data[2]
+                val polydipsia = data[3]
+                val swl = data[4]
+                val weakness = data[5]
+                val polyphagia = data[6]
+                val gt = data[7]
+                val vb = data[8]
+                val itching = data[9]
+                val irritabiity = data[10]
+                val dh = data[11]
+                val pp = data[12]
+                val ms = data[13]
+                val alopecia = data[14]
+                val obesity = data[15]
                 val classPrediction = binding?.tvResultClassification?.text.toString()
 
                 user?.let { user ->
                     user.userName = userLogin
                     user.date = date
+                    user.age   = age
                     user.gender = gender
                     user.polyuria = polyuria
                     user.polydipsia = polydipsia
@@ -355,9 +361,27 @@ class ResultFragment : Fragment(), View.OnClickListener {
 
         return text
     }
+    private fun changeAge(text: String): String {
+        if (text == "Di Atas 65 Tahun") {
+            return "Above 65"
+        } else if (text == "20-35 Tahun") {
+            return "20-35"
+        }else if (text == "36-45 Tahun") {
+            return "36-45"
+        }else if (text == "46-55 Tahun") {
+            return "46-55"
+        }else if (text == "56-65 Tahun") {
+            return "56-65"
+        }
+
+        return text
+    }
 
     private fun classificationDisease() {
-        var gender = data[0]
+
+        var age = data[0]
+        age = changeAge(binding?.tvResultAge?.text.toString().trim())
+        var gender = data[1]
         when (binding?.rgGender?.checkedRadioButtonId) {
             R.id.rb_Peria -> {
                 gender = changeGender(binding?.rbPeria?.text.toString())
@@ -366,7 +390,7 @@ class ResultFragment : Fragment(), View.OnClickListener {
                 gender = changeGender(binding?.rbWanita?.text.toString())
             }
         }
-        var polyuria = data[1]
+        var polyuria = data[2]
         when (binding?.rgPolyuria?.checkedRadioButtonId) {
             R.id.polyuria_yes -> {
                 polyuria = changeYesNo(binding?.polyuriaYes?.text.toString())
@@ -375,7 +399,7 @@ class ResultFragment : Fragment(), View.OnClickListener {
                 polyuria = changeYesNo(binding?.polyuriaNo?.text.toString())
             }
         }
-        var polydipsia = data[2]
+        var polydipsia = data[3]
         when (binding?.rgPolydipsia?.checkedRadioButtonId) {
             R.id.polydipsia_yes -> {
                 polydipsia = changeYesNo(binding?.polydipsiaYes?.text.toString())
@@ -384,7 +408,7 @@ class ResultFragment : Fragment(), View.OnClickListener {
                 polydipsia = changeYesNo(binding?.polydipsiaNo?.text.toString())
             }
         }
-        var swl = data[3]
+        var swl = data[4]
         when (binding?.rgSwl?.checkedRadioButtonId) {
             R.id.swl_yes -> {
                 swl = changeYesNo(binding?.swlYes?.text.toString())
@@ -393,7 +417,7 @@ class ResultFragment : Fragment(), View.OnClickListener {
                 swl = changeYesNo(binding?.swlNo?.text.toString())
             }
         }
-        var weakness = data[4]
+        var weakness = data[5]
         when (binding?.rgWeakness?.checkedRadioButtonId) {
             R.id.weakness_yes -> {
                 weakness = changeYesNo(binding?.weaknessYes?.text.toString())
@@ -402,7 +426,7 @@ class ResultFragment : Fragment(), View.OnClickListener {
                 weakness = changeYesNo(binding?.weaknessNo?.text.toString())
             }
         }
-        var polyphagia = data[5]
+        var polyphagia = data[6]
         when (binding?.rgPolyphagia?.checkedRadioButtonId) {
             R.id.polyphagia_yes -> {
                 polyphagia = changeYesNo(binding?.polyphagiaYes?.text.toString())
@@ -411,7 +435,7 @@ class ResultFragment : Fragment(), View.OnClickListener {
                 polyphagia = changeYesNo(binding?.polyphagiaNo?.text.toString())
             }
         }
-        var gt = data[6]
+        var gt = data[7]
         when (binding?.rgGenitalThrush?.checkedRadioButtonId) {
             R.id.genitalThrush_yes -> {
                 gt = changeYesNo(binding?.genitalThrushYes?.text.toString())
@@ -420,7 +444,7 @@ class ResultFragment : Fragment(), View.OnClickListener {
                 gt = changeYesNo(binding?.genitalThrushNo?.text.toString())
             }
         }
-        var vb = data[7]
+        var vb = data[8]
         when (binding?.rgVisualBlurring?.checkedRadioButtonId) {
             R.id.visualBlurring_yes -> {
                 vb = changeYesNo(binding?.visualBlurringYes?.text.toString())
@@ -429,7 +453,7 @@ class ResultFragment : Fragment(), View.OnClickListener {
                 vb = changeYesNo(binding?.visualBlurringNo?.text.toString())
             }
         }
-        var itching = data[8]
+        var itching = data[9]
         when (binding?.rgItching?.checkedRadioButtonId) {
             R.id.itching_yes -> {
                 itching = changeYesNo(binding?.itchingYes?.text.toString())
@@ -438,7 +462,7 @@ class ResultFragment : Fragment(), View.OnClickListener {
                 itching = changeYesNo(binding?.itchingNo?.text.toString())
             }
         }
-        var irritabiity = data[9]
+        var irritabiity = data[10]
         when (binding?.rgIrritability?.checkedRadioButtonId) {
             R.id.irritability_yes -> {
                 irritabiity = changeYesNo(binding?.irritabilityYes?.text.toString())
@@ -447,7 +471,7 @@ class ResultFragment : Fragment(), View.OnClickListener {
                 irritabiity = changeYesNo(binding?.irritabilityNo?.text.toString())
             }
         }
-        var dh = data[10]
+        var dh = data[11]
         when (binding?.rgDelayedHealing?.checkedRadioButtonId) {
             R.id.delayedHealing_yes -> {
                 dh = changeYesNo(binding?.delayedHealingYes?.text.toString())
@@ -456,7 +480,7 @@ class ResultFragment : Fragment(), View.OnClickListener {
                 dh = changeYesNo(binding?.delayedHealingNo?.text.toString())
             }
         }
-        var pp = data[11]
+        var pp = data[12]
         when (binding?.rgPartialParesis?.checkedRadioButtonId) {
             R.id.partialParesis_yes -> {
                 pp = changeYesNo(binding?.partialParesisYes?.text.toString())
@@ -465,7 +489,7 @@ class ResultFragment : Fragment(), View.OnClickListener {
                 pp = changeYesNo(binding?.partialParesisNo?.text.toString())
             }
         }
-        var ms = data[12]
+        var ms = data[13]
         when (binding?.rgMuscleStiffness?.checkedRadioButtonId) {
             R.id.muscleStiffness_yes -> {
                 ms = changeYesNo(binding?.muscleStiffnessYes?.text.toString())
@@ -474,7 +498,7 @@ class ResultFragment : Fragment(), View.OnClickListener {
                 ms = changeYesNo(binding?.muscleStiffnessNo?.text.toString())
             }
         }
-        var alopecia = data[13]
+        var alopecia = data[14]
         when (binding?.rgAlopecia?.checkedRadioButtonId) {
             R.id.alopecia_yes -> {
                 alopecia = changeYesNo(binding?.alopeciaYes?.text.toString())
@@ -483,7 +507,7 @@ class ResultFragment : Fragment(), View.OnClickListener {
                 alopecia = changeYesNo(binding?.alopeciaNo?.text.toString())
             }
         }
-        var obesity = data[14]
+        var obesity = data[15]
         when (binding?.rgObesity?.checkedRadioButtonId) {
             R.id.obesity_yes -> {
                 obesity = changeYesNo(binding?.obesityYes?.text.toString())
@@ -495,10 +519,11 @@ class ResultFragment : Fragment(), View.OnClickListener {
 
         Log.d(
             "STATUS",
-            gender + polyuria + polydipsia + swl + weakness + polyphagia + gt + vb + itching + irritabiity + dh + pp + ms + alopecia + obesity
+             age + polyuria + polydipsia + swl + weakness + polyphagia + gt + vb + itching + irritabiity + dh + pp + ms + alopecia + obesity
         )
 
         resultViewModel.resultClassification(
+            age,
             gender,
             polyuria,
             polydipsia,

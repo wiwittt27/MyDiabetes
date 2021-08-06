@@ -31,6 +31,7 @@ interface ApiService {
     @FormUrlEncoded
     @POST("diabetes/api/user_clasificatioin.php")
     fun userClassification(
+        @Field("age") age: String,
         @Field("gender") gender: String,
         @Field("polyuria") polyuria: String,
         @Field("polydipsia") polydipsia: String,
