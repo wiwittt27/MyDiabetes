@@ -8,7 +8,7 @@ import com.alawiyaa.mydiabetes.data.source.local.entitiy.NewsEntity
 import com.alawiyaa.mydiabetes.data.source.local.entitiy.UserDiseaseEntity
 
 
-@Database(entities = [UserDiseaseEntity::class, NewsEntity::class], version = 2,exportSchema = false)
+@Database(entities = [UserDiseaseEntity::class, NewsEntity::class], version = 3,exportSchema = false)
 abstract class UserDiseaseDatabase :RoomDatabase() {
 
     abstract fun userDao(): UserDiseaseDao

@@ -50,9 +50,6 @@ class AdapterNewsDrug : PagedListAdapter<NewsEntity, AdapterNewsDrug.MyAdapter>(
                 tvDetailTitle.text = item.title
                 Glide.with(itemView.context)
                     .load(BASE_URL +"diabetes/image/" + item.imagePath)
-                    .skipMemoryCache(true)
-                    .diskCacheStrategy(DiskCacheStrategy.NONE)
-                    .signature( ObjectKey(System.currentTimeMillis()))
                     .apply(
                         RequestOptions.placeholderOf(R.drawable.ic_loading)
                             .error(R.drawable.ic_error))

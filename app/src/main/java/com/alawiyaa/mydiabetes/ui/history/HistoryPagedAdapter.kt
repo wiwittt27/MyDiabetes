@@ -42,7 +42,7 @@ class HistoryPagedAdapter (private val activity: Activity) : PagedListAdapter<Us
         RecyclerView.ViewHolder(binding.root) {
         fun bind(user: UserDiseaseEntity) {
             with(binding) {
-                tvResultName.text = user.userName
+                tvResultName.text = user.age
                 tvDate.text = user.date
                 tvResultClass.text = user.classPrediction
                 tvResultGender.text = user.gender

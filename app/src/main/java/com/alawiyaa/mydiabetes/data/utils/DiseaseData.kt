@@ -12,9 +12,9 @@ object DiseaseData {
         val age = QuestionData(
             1,
             "Age",
-            R.drawable.ic_gender,
-            "Rentang umur anda?",
-            "Berapa rentang umur anda",
+            R.drawable.ic_growing_up,
+            "Rentang usia anda?",
+            "Berapa rentang usia anda",
             "20-35",
             null
         )

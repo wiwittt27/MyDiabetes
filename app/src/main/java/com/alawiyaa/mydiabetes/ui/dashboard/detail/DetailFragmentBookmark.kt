@@ -36,7 +36,7 @@ class DetailFragmentBookmark : Fragment() {
         val factory = DiabetesViewModelFactory.getInstance(requireActivity())
         resultViewModel = ViewModelProvider(this, factory)[ResultViewModel::class.java]
        data = DetailFragmentBookmarkArgs.fromBundle(arguments as Bundle).toBookmarkDetail
-
+        binding?.tvAge?.text = data?.age
         binding?.tvGender?.text = data?.gender
         binding?.tvPolyuria?.text = data?.polyuria
         binding?.tvPolydipsia?.text = data?.polydipsia
@@ -52,7 +52,7 @@ class DetailFragmentBookmark : Fragment() {
         binding?.tvItching?.text = data?.itching
         binding?.tvIrritability?.text =data?.irritability
         binding?.tvObesity?.text = data?.obesity
-        binding?.tvResult?.text = data?.classPrediction
+        binding?.tvResult?.text = data?.classInformation
 
         binding?.btnDelete?.setOnClickListener { data?.let {  resultViewModel.deleteResult(it)}
         activity?.onBackPressed()

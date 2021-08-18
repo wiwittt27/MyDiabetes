@@ -69,6 +69,9 @@ data class UserDiseaseEntity(
     var obesity: String? = null,
 
     @ColumnInfo(name = "class")
-    var classPrediction : String?  = null
+    var classPrediction : String?  = null,
+
+    @ColumnInfo(name = "class_info")
+    var classInformation : String?  = null
 
 ) : Parcelable

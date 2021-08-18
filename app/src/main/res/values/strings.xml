@@ -1,19 +1,19 @@
 <resources>
     <string name="app_name">My Diabetes</string>
-    <string name="login">Login</string>
-    <string name="tab_Sign_in">Sign In</string>
-    <string name="tab_Sign_up">Sign Up</string>
+    <string name="login">Masuk</string>
+    <string name="tab_Sign_in">Masuk</string>
+    <string name="tab_Sign_up">Daftar</string>
 
     <string name="tab_news">Berita</string>
     <string name="tab_favorite">Favorit</string>
 
 
-    <string name="username">Your username</string>
-    <string name="password">Your password</string>
-    <string name="lgn_username">Username</string>
-    <string name="lgn_password">Password</string>
-    <string name="register">Register</string>
-    <string name="text_full_name">Your fullname</string>
+    <string name="username">Nama Pengguna</string>
+    <string name="password">Kata Sandi</string>
+    <string name="lgn_username">Nama Pengguna</string>
+    <string name="lgn_password">Kata Sandi</string>
+    <string name="register">Daftar</string>
+    <string name="text_full_name">Nama Lengkap</string>
 
 
     <string-array name="gender_array">
@@ -40,7 +40,7 @@
 
     <string name="progress_text">%1$d / %2$d </string>
     <string name="label_age">Age</string>
-    <string name="label_gender">Gender</string>
+    <string name="label_gender">Jenis Kelamin</string>
     <string name="label_polyuria">Polyuria</string>
     <string name="label_polydipsia">Polydipsia</string>
     <string name="label_polyphagia">Polyphagia</string>
@@ -55,7 +55,7 @@
     <string name="label_itching">Itching</string>
     <string name="label_irritability">Irritability</string>
     <string name="label_obesity">Obesity</string>
-    <string name="label_name">Name</string>
+    <string name="label_name">Nama</string>
     <string name="label_class">Class</string>
     <string name="no_data">Data kosong</string>
     <string name="label_title">Title</string>
@@ -65,5 +65,6 @@
     <string name="label_negative">Anda tidak menderita Diabetes. Silakan berkonsultasi dengan Dokter untuk verifikasi. </string>
     <!-- TODO: Remove or change this placeholder text -->
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="register_sukses">Sukses Register!</string>
+    <string name="register_sukses">Sukses Daftar!</string>
+    <string name="label_Age">Age</string>
 </resources>

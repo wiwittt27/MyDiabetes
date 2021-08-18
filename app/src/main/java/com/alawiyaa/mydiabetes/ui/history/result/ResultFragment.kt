@@ -220,6 +220,7 @@ class ResultFragment : Fragment(), View.OnClickListener {
                     user.alopecia = alopecia
                     user.obesity = obesity
                     user.classPrediction = classPrediction
+                    user.classInformation = binding?.tvInformation?.text.toString()
                 }
                 resultViewModel.insertResult(user as UserDiseaseEntity)
 
