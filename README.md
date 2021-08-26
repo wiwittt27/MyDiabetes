@@ -10,7 +10,7 @@ Untuk Skripsi
 ## Screenshots 
 
 <p align="center">
-  <img src="https://drive.google.com/file/d/121b28LPyIRKYewzzSkxm-VWr1eV1-PI0/view?usp=sharing" width="210">
+  <a href="https://drive.google.com/file/d/121b28LPyIRKYewzzSkxm-VWr1eV1-PI0/view?usp=sharing"><img src="https://drive.google.com/file/d/121b28LPyIRKYewzzSkxm-VWr1eV1-PI0/view?usp=sharing" style="width: 650px; max-width: 100%; height: auto" title="Click to enlarge picture" />
   <img src="/misc/img/02.jpg" width="210">
   <img src="/misc/img/03.jpg" width="210">
 </p>
