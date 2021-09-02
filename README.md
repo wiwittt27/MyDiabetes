@@ -2,9 +2,8 @@
 
 # Deteksi Dini Penyakit Diabetes Menggunakan Algoritma Naive Bayes
 
-Skripsi S1 Informatika
-<br />
 
+<br />
 
 ---
 ## Screenshots 
